@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
             :presence => true,
             :length => {:minimum => 2}
 
-  # validates_format_of :email,
-  #           :with => /A(([A-Za-z0-9]+_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++))*[A-Z‌​a-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6}$\z/i
+  validates :email, :uniqueness => true
+
+  validates_format_of :email,
+            :with => /\A[\w-]+@[\w-]+\.[a-z]{2,3}\z/i
 end
