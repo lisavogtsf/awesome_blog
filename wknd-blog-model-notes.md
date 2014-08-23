@@ -47,6 +47,7 @@ has_many tags
 title
 img_url
 body
+user_id
 
 ### Actions
 posts#index
