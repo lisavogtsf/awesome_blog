@@ -1,11 +1,15 @@
 class PostsController < ApplicationController
-	def index 
-		@posts = Post.all
+	def index
+		user_id = params[:user_id]
+		@user = User.find_by_id(user_id)
+
+		@posts = @user.posts.all
 	end
 
 	def new
 		user_id = params[:user_id]
 		@user = User.find_by_id(user_id)
+
 		@post = @user.posts.new
 	end
 
@@ -15,6 +19,7 @@ class PostsController < ApplicationController
 	def show
 		user_id = params[:user_id]
 		@user = User.find_by_id(user_id)
+		
 		post_id = params[:id]
 
 		@post = @user.posts.find_by_id(post_id)
