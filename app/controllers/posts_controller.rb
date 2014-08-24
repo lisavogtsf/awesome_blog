@@ -1,6 +1,9 @@
 class PostsController < ApplicationController
-	def index 
-		@posts = Post.all
+	def index
+		user_id = params[:user_id]
+		@user = User.find_by_id(user_id)
+
+		@posts = @user.posts.all
 	end
 
 	def new
