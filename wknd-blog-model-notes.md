@@ -8,6 +8,7 @@ has_many posts
 first_name
 last_name
 email
+img_url
 password
 
 ### Actions
@@ -40,11 +41,10 @@ page#destroy
 ## Post
 belongs_to user
 has_many comments
-has_many tags
+has_many tags through post_tags
 
 ### Fields
 title
-img_url
 body
 user_id
 
@@ -77,12 +77,10 @@ comments#delete - redirect to post show
 ***************************
 
 ## Tags
-belongs_to post
-has_many posts
+has_many posts through post_tags
 
 ### Fields
 name
-post_id
 
 ### Actions
 tags#show
@@ -90,6 +88,20 @@ tags#new - on post#new
 tags#create - redirect to posts show
 tags#edit - on posts#edit
 tags#update - on post#update
+
+****************************
+
+## Post_tags
+(join table for posts/tags many to many)
+belongs_to :posts
+belongs_to :users
+
+## Fields
+post_id
+tag_id
+
+
+
 
 
 
