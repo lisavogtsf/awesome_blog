@@ -9,6 +9,7 @@ class PostsController < ApplicationController
 	def new
 		user_id = params[:user_id]
 		@user = User.find_by_id(user_id)
+
 		@post = @user.posts.new
 	end
 
@@ -18,6 +19,7 @@ class PostsController < ApplicationController
 	def show
 		user_id = params[:user_id]
 		@user = User.find_by_id(user_id)
+		
 		post_id = params[:id]
 
 		@post = @user.posts.find_by_id(post_id)
