@@ -25,8 +25,7 @@ belongs_to user
 
 ### Fields
 title
-about_me
-contact
+content
 user_id
 
 ### Actions
