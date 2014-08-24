@@ -21,7 +21,11 @@ class PostsController < ApplicationController
 	end
 
 	def edit 
-		@post = get_post_by_id
+		user_id = params[:user_id]
+		@user = User.find_by_id(user_id)
+
+		post_id = params[:id]
+		@post = @user.posts.find_by_id(post_id)
 	end
 
 	def update
