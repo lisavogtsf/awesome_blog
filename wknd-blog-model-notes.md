@@ -9,7 +9,7 @@ first_name
 last_name
 email
 img_url
-password
+
 
 ### Actions
 users#index - list users
