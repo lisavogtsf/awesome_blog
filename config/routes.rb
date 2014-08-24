@@ -1,5 +1,7 @@
 AwesomeBlog::Application.routes.draw do
 
   root to: 'sites#index'
-  resources :users
+  resources :users do
+  	resources :posts
+ 	end
 end
