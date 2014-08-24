@@ -1,8 +1,10 @@
 class PostsController < ApplicationController
 	def index 
+		@posts = Post.all
 	end
 
 	def new
+		@post = Post.new
 	end
 
 	def create
@@ -12,6 +14,7 @@ class PostsController < ApplicationController
 	end
 
 	def edit
+		@post = get_post_by_id
 	end
 
 	def update
@@ -19,4 +22,11 @@ class PostsController < ApplicationController
 
 	def destroy
 	end	
+
+	private 
+
+	def get_post_by_id
+		id = params[:id]
+		Post.find_by_id(id)
+	end
 end
