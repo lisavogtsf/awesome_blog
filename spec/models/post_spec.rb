@@ -29,4 +29,9 @@ RSpec.describe Post, :type => :model do
     post.should_not be_valid
   end
 
+  it "should allow a post to be found by user.posts" do
+    post = Post.create(title: "Test", content: "test", user_id: @user_id)
+    expect(@john.posts.size).to eql(1)
+  end
+
 end

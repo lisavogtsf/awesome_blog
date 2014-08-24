@@ -25,7 +25,6 @@ belongs_to user
 
 ### Fields
 title
-about_me
 content
 user_id
 
