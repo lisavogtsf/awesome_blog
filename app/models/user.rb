@@ -7,8 +7,8 @@ class User < ActiveRecord::Base
             :presence => true,
             :length => {:minimum => 2}
 
-  validates :email, :uniqueness => true
+  # validates :email, :uniqueness => true
 
-  validates_format_of :email,
-            :with => /\A([\w-]|\.)+@([\w-]|\.)+\.[a-z]{2,3}\z/i
+  # validates_format_of :email,
+  #           :with => /\A([\w-]|\.)+@([\w-]|\.)+\.[a-z]{2,3}\z/i
 end
