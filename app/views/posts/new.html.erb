@@ -1,3 +1,5 @@
 <!-- new.html.erb -->
 
 New Post
+
+<%= render partial: "shared/post", object: @post, locals: {user: @user, button_label: "Create post"} %>
