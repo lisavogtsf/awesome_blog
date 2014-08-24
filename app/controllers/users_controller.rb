@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   # display new user form
   def new
-
+    @user = User.new
   end
 
   # create new user
