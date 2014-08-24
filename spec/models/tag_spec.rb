@@ -22,7 +22,7 @@ RSpec.describe Tag, :type => :model do
     tag.should_not be_valid
   end
 
-  it "should require content for a new post" do
+  it "should allow a post to be appended to a tag" do
     @tag.posts << @post
     expect(@tag.posts.size).to eql(1)
   end
