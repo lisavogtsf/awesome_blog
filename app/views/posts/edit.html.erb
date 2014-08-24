@@ -1,3 +1,5 @@
 <!-- edit.html.erb -->
 
 Edit post
+
+<%= render partial: "shared/post", object: @post, locals: {user: @user, button_label: "Edit post"} %>
