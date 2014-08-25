@@ -23,6 +23,13 @@
 # mark = User.find_by_first_name("Mark")
 # will = User.find_by_first_name("Will")
 
+# ## Add img_urls
+# lisa.img_url = "https://avatars0.githubusercontent.com/u/7121497?v=2&s=460"
+# mark.img_url = "https://avatars0.githubusercontent.com/u/479466?v=2&s=460"
+# jesse.img_url = "https://avatars1.githubusercontent.com/u/8052705?v=2&s=400"
+# angga.img_url = "https://avatars3.githubusercontent.com/u/7015675?v=2&s=460"
+# will.img_url = "https://avatars1.githubusercontent.com/u/5432788?v=2&s=460"
+
 # # # # # Pages, either About or Contact
 
 # mark.pages.create({title: "About", content: "I am a whiskey afficionado."})
