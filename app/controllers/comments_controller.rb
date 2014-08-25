@@ -41,8 +41,12 @@ class CommentsController < ApplicationController
 	end
 
 	def destroy
+		@user = user_by_id
+		@post = post_by_id
 		comment = comment_by_id
 		comment_by_id.destroy
+
+		redirect_to [@user, @post]
 	end
 
 	private
