@@ -1,0 +1,26 @@
+<!-- index.html.erb -->
+
+<!-- show all pages for given user -->
+<%= render partial: "shared/partial_sidebar" %>
+
+<div class="ui vertically divided page grid right">
+	<div class="one column row">
+		<h2 class="ui header"><%= @user.first_name %>'s Pages</h2>
+	</div>
+<% @user.pages.each do |page| %>
+
+	<div class="one column row">
+		<div class="column">
+			<h4 class="ui header">
+				<a href="/users/<%= @user.id %>/pages/<%= page.id %>">
+					<%= page.title %>
+				</a>
+			</h4>
+			<p><%= page.created_at %></p>
+			<p><%= page.content %></p>
+		</div>
+	</div>
+
+<% end %>
+	</div>
+<div>

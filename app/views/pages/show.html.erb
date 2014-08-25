@@ -1,0 +1,27 @@
+<!-- show.html.erb -->
+
+<!-- show single page, identified by id -->
+<!-- show.html.erb -->
+<%= render partial: "shared/partial_sidebar" %>
+
+
+<div class="ui vertically divided page grid right">
+  <div class="one column row">
+    <h2 class="ui header"><%=@page.title %></h2>
+    <h5 class="ui header"><%=@page.created_at %></h5>
+  </div>
+  <div class="one column row">
+    <div class="ten wide column">
+      <p><%=@page.content %></p>
+
+        <p><%= link_to "Update This?",edit_user_page_path, class: "ui blue button" %></p>
+    </div>
+    <div class="two wide column">
+    </div>
+  </div>
+  <div class="two column row">
+    <div class="column">
+        </div>
+      </div>
+    <div class="column"></div>
+  </div>

@@ -1,14 +1,16 @@
-<%= render partial: "shared/partial_sidebar" %>
+<%= render partial: "shared/partial_sidebar_no_user" %>
 
-<div class="row"><h2 class="ui header right">Sign Up!</h2> </div>
-<div class="row"><h2 class="ui header right"></h2></div>
 
-<div class="ui vertically divided grid right">
-  <div class="one column row">
+<div class="ui vertically divided page grid right">
+  <div class="two column row">
     <div class="column">
-      <p>Create you're User</p>
+      <h2>Sign up</h2>
+      <div class="ui form">
+      <%= render partial: "shared/user_form", object: @user, locals: {button_label: "Create user"} %>
+      </div>
+    </div>
+    <div class="column">
     </div>
   </div>
-
-<%= render partial: "shared/user", object: @user, locals: {button_label: "Create user"} %>
+</div>
 

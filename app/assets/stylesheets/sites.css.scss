@@ -1,3 +1,86 @@
 // Place all the styles related to the sites controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/** index page **/
+
+.hero {
+  width: 100%;
+  margin: 0;
+  height: 500px;
+  background: url(http://miriadna.com/desctopwalls/images/max/Falling-asleep-forest.jpg) bottom center no-repeat;
+  background-size: cover;
+  padding: 4em;
+  @media screen and (max-width: 900px) {
+    height: 600px;
+    h1 {
+      font-size: 4em;
+    }
+  }
+  h1 {
+    text-transform:uppercase;
+    color: #fff;
+    text-shadow: 1px 1px 0 #666;
+    text-align: center;
+    font-size: 5em;
+  }
+  p {
+    color: #fff;
+    text-shadow: 1px 1px 0 #666;
+    text-align: center;
+    font-size: 2em;
+  }
+  .home-buttons {
+    text-align: center;
+  }
+
+}
+/** sidebar **/
+
+.portrait-wrapper {
+  margin: 0 auto;
+  text-align: center;
+}
+.portrait-wrapper h4 {
+  margin: .5em auto;
+  font-size: 24px;
+  color: #fff;
+}
+.ui.menu h4 {
+  color: #fff;
+  margin-bottom: 1em;
+  margin-top: 0;
+}
+.img-crop-circle {
+  width: 100px;
+  height: 100px;
+  margin: 10% auto;
+  border-radius: 100%;
+  overflow: hidden;
+  background-size: cover;
+  border: 4px solid rgba(249, 191, 59, 1.0);
+}
+
+/** slide down form **/
+.slide-down-form {
+  height: 0;
+  width: 40%;
+  background: #999;
+  padding: 0 2em;
+  overflow: hidden;
+  border-radius: 4px;
+  margin: 1em;
+  transition: all .25s ease-out;
+}
+.slide-down-form input {
+  display: block;
+}
+
+.down {
+  height: auto;
+  padding: 2em;
+}
+.submit {
+  display: block;
+  clear: both;
+}

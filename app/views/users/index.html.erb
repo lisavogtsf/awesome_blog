@@ -1,40 +1,38 @@
-<%= render partial: "shared/partial_sidebar" %>
+<%= render partial: "shared/partial_sidebar_no_user" %>
 
-<div class="row"><h2 class="ui header right">User Index</h2> </div>
-<div class="row"><h2 class="ui header right"></h2></div>
-
-<div class="ui vertically divided grid right">
-  <div class="one column row">
-    <div class="column">
-      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
-    </div>
-  </div>
-
-
-
-
- <div class="two column row">
-  	<div class="column">
-
-<!-- display all users in an ugly table -->
-<% @users.each do |user| %>
-	<table>
-		<tr>
-			<th>First Name</th>
-			<th>Last Name</th>
-			<th>email address</th>
-		</tr>
-		<tr>
-			<td><%= user.first_name  %></td>
-			<td><%= user.last_name  %></td>
-			<td><%= user.email %></td>
-		</tr>
-
-	</table>
-
-<% end %>
-
+<!-- display all users in a table -->
+<div class="ui vertically divided page grid right">
+	<div class="one column row">
+		<div class="eight wide column">
+			<h2 class="ui header">Awesome Blog Users</h2>
+			<table class="ui table">
+				<thead><!--  table headings -->
+					<tr>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Email</th>
+						<th>Show User</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @users.each do |user| %>
+					<tr>
+						<td><%= user.first_name  %></td>
+						<td><%= user.last_name  %></td>
+						<td><%= user.email %></td>
+						<td class="show"><a href="users/<%=user.id %>">Show</a></td>
+					</tr>
+					<% end %>
+				</tbody>
+				 <!-- <tfoot>
+		    			<tr><th colspan="3">
+		      				<div class="ui blue labeled icon button"><i class="user icon"></i> Add User</div>
+		    				</th>
+		    			</tr>
+		  		</tfoot> -->
+			</table>
+		</div>
+		<div class="column">
+		</div>
+	</div>
 </div>
-
-</div>
-

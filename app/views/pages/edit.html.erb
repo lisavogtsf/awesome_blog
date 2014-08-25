@@ -1,11 +1,12 @@
-<!-- new.html.erb -->
+<!-- edit.html.erb -->
 
+<!-- place to edit a User's Page -->
 <%= render partial: "shared/partial_sidebar" %>
 
 <div class="ui vertically divided page grid right">
   <div class="one column row">
     <div class="left floated twelve wide column">
-      <div class="row"><h2 class="ui header">Add a New Post</h2></div>
+      <h2>Edit Page</h2>
     </div><!-- /.column -->
   </div><!-- /.row -->
   <div class="one column row">
@@ -13,10 +14,11 @@
       <!-- when using post form, drop it into a div class="post-form" -->
       <!--to pick up appropriate styles -->
       <div class="post-form">
-      <%= render partial: "shared/post_form", object: @post, locals: {user: @user, button_label: "Create post"} %>
+      <%= render partial: "shared/page_form", object: @page, locals: {user: @user, button_label: "Update page"} %>
+      <div class="field space-above">
+        <%= button_to "Delete Page", user_page_path(@user, @page), method: :delete, class: "ui red button delete" %>
+      </div>
       </div>
     </div><!-- /.column -->
   </div><!-- /.row -->
 </div><!-- /.grid -->
-
-

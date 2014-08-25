@@ -1,0 +1,14 @@
+<!-- _user.html.erb -->
+
+<%= form_for user_form do |f| %>
+  <div class="field">
+  	<%= f.text_field :first_name, placeholder: "First name" %>
+  </div>
+  <div class="field">
+  	<%= f.text_field :last_name, placeholder: "Last name" %>
+  </div>
+  <div class="field">
+	<%= f.text_field :email, placeholder: "email"%>
+</div>
+	<%= f.submit button_label, class: "ui green button" %>
+<% end %>
