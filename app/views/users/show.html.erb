@@ -1,15 +1,12 @@
+<!-- <%= render partial: "shared/partial_sidebar" %> -->
 
-<p>LEAVING OUT SIDEBAR/Sematic ui FOR NOW</p>
-<p>(should appear at users/<%= @user.id %>)</p>
-
-<h2>User show</h2> 
-
+<h2 class="ui header">User show</h2> 
 
 <div>
 	<p>User name: <%= @user.first_name %> <%= @user.last_name %></p>
 	<p>User email: <%= @user.email %></p>
-	<p>Go to user's Pages</p>
-	<p>Go to user's <a href="/users/<%=@user.id%>/posts">Posts</a></p>
+	<p>Go to <%= @user.first_name %>'s <a href="/users/<%=@user.id%>/pages">Pages</a></p>
+	<p>Go to <%= @user.first_name %>'s <a href="/users/<%=@user.id%>/posts">Posts</a></p>
 </div>
 
-<h2><a href="/users">See all users</a></h2>
+<h2><a href="/users">All users</a></h2>
