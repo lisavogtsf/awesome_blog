@@ -4,6 +4,8 @@ class CommentsController < ApplicationController
 	# comments will always only be display in context with their parent
 
 	def new
+		@context = context
+		@comment = @context.comments.new
 	end
 
 	def create
@@ -22,9 +24,9 @@ class CommentsController < ApplicationController
 
 	def context
 		if params[:post_id]
-			Post.find(params[:post_id])
+			Post.find_by_id(params[:post_id])
 		else
-			Comment.find(params[:comment_id])
+			Comment.find_by_id(params[:comment_id])
 		end
 	end
 end
