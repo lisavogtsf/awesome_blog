@@ -1,8 +1,17 @@
-
-<div class="row"><h2 class="ui header right">Users Index</h2> </div>
+<%= render partial: "shared/partial_sidebar" %>
+<div class="ui vertically divided page grid right">
+	<div class="one column row">
+		<h2 class="ui header">Awesome Blog Users</h2>
+	</div><!-- closes header column row -->
+	<div class="four column row">
+		<div>
+			
+		</div>
+		
+	</div><!-- close four column row -->
 
 <!-- display all users in an ugly table -->
-<% @users.each do |user| %>
+
 	<table>
 		<tr>
 			<th>First Name</th>
@@ -10,16 +19,36 @@
 			<th>email</th>
 			<th>Show User</th>
 		</tr>
-		<tr>
-			<td><%= user.first_name  %></td>
-			<td><%= user.last_name  %></td>
-			<td><%= user.email %></td>
-			<td><a href="users/<%=user.id %>">Show</a></td>
-		</tr>
-
+		<% @users.each do |user| %>
+			<tr>
+				<td><%= user.first_name  %></td>
+				<td><%= user.last_name  %></td>
+				<td><%= user.email %></td>
+				<td><a href="users/<%=user.id %>">Show</a></td>
+			</tr>
+		<% end %>
 	</table>
 
+<!-- ADDED FROM POSTS TO COMPARE STYLING OPTIONS -->
+
+<div class="ui vertically divided page grid right">
+	<div class="one column row">
+		<h2 class="ui header">All Posts</h2>
+	</div>
+<% @posts.each do |post| %>
+
+	<div class="one column row">
+		<div class="column">
+			<h4 class="ui header"><%= post.title %></h4>
+			<p><%= post.created_at %></p>
+			<p><%= post.content %></p>
+		</div>
+	</div>
+
 <% end %>
+	</div>
+<div>
+
 
 
 
