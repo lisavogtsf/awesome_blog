@@ -11,12 +11,10 @@ class UsersController < ApplicationController
 
 	# create new user
 	def create
-
 		user_params = params.require(:user).permit(:first_name, :last_name, :email)
     		newbie = User.create(user_params)
     		redirect_to newbie
     		# redirect_to user_path
-
 
 	end
 
@@ -27,6 +25,13 @@ class UsersController < ApplicationController
 
 	# udate the user
 	def update
+		user_id = params[:id]
+		user = User.find(user_id)
+		updated_attributes = params.require(:user).permit(:first_name, :last_name, :email)
+		user.update_attributes(updated_attributes) 
+		# redirect_to "/users/#{user_id}"
+		# redirect_to user_path(user_id)
+		redirect_to user
 	end
 
 	# show one user
