@@ -1,3 +1,5 @@
 <!-- new.html.erb -->
 
 New comment
+
+<%= render partial: "shared/comment_form", object: @comment, locals: {user: @user, context: @context, button_label: "Add comment"} %>
