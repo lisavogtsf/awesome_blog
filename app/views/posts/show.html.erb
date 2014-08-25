@@ -3,17 +3,16 @@
 
 
 <div class="ui vertically divided page grid right">
- 
-	<div class="one column row">
-		<h2 class="ui header"><%=@post.title %></h2>
-		<h5 class="ui header"><%=@post.created_at %></h5>
-	</div>
   <div class="one column row">
+    <h2 class="ui header"><%=@post.title %></h2>
+    <h5 class="ui header"><%=@post.created_at %></h5>
+  </div>
+  <div class="two column row">
     <div class="column">
       <p><%=@post.content %></p>
-				
-			  <p><%= link_to "Update This?",edit_user_post_path, class: "ui blue button" %></p>
-        
+
+        <p><%= link_to "Update This?",edit_user_post_path, class: "ui blue button" %></p>
+
     </div>
     <div class="column">
     </div>
@@ -27,7 +26,7 @@
           <div class="ui comments">
             <div class="comment">
               <a class="avatar">
-                <%= image_tag "icon_1500.png" %>
+                <img src="/images/demo/avatar.jpg">
               </a>
               <div class="content">
                 <% @comments.each do |comment| %>
