@@ -1,12 +1,16 @@
-<!-- <%= render partial: "shared/partial_sidebar" %> -->
+<%= render partial: "shared/partial_sidebar" %>
 
-<h2 class="ui header">User show</h2> 
+<div class="ui vertically divided page grid right">
+  <div class="two column row">
+    <div class="column">
+      <h2 class="ui header">User show</h2>
 
-<div>
-	<p>User name: <%= @user.first_name %> <%= @user.last_name %></p>
-	<p>User email: <%= @user.email %></p>
-	<p>Go to <%= @user.first_name %>'s <a href="/users/<%=@user.id%>/pages">Pages</a></p>
-	<p>Go to <%= @user.first_name %>'s <a href="/users/<%=@user.id%>/posts">Posts</a></p>
+      <div>
+      	<p>User name: <%= @user.first_name %> <%= @user.last_name %></p>
+      	<p>User email: <%= @user.email %></p>
+      	<p>Go to <%= @user.first_name %>'s <a href="/users/<%=@user.id%>/pages">Pages</a></p>
+      	<p>Go to <%= @user.first_name %>'s <a href="/users/<%=@user.id%>/posts">Posts</a></p>
+      </div>
+    </div>
+  </div>
 </div>
-
-<h2><a href="/users">All users</a></h2>
