@@ -37,3 +37,12 @@
 	position: relative;
 	left: 14rem;
 }
+
+/*#footer {
+    background-color: red;
+    clear: both;
+    position: relative;
+    z-index: 10;
+    height: 3em;
+    margin-top: -3em;
+}*/
