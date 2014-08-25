@@ -1,3 +1,28 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// New Post Form
+
+* {
+  box-sizing: border-box;
+}
+.post-form {
+  .ui.input {
+    margin-bottom: 1em;
+    width: 100%;
+  }
+  .field textarea {
+    width: 100%;
+    outline: 0;
+    background-color:#fff;
+    color: rgba(0,0,0,.7);
+    border-radius: .3125em;
+    padding: .65em 1em;
+    font-size: 1em;
+    margin: 0;
+    border: 1px solid rgba(0,0,0,.15);
+    height: 100px;
+    margin-bottom: 1em;
+  }
+}

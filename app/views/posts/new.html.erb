@@ -1,5 +1,21 @@
 <!-- new.html.erb -->
 
-New Post
+<!-- show.html.erb -->
+<%= render partial: "shared/partial_sidebar" %>
 
-<%= render partial: "shared/post_form", object: @post, locals: {user: @user, button_label: "Create post"} %>
+<div class="ui vertically divided grid right">
+  <div class="one column row">
+    <div class="left floated twelve wide column">
+      <h2>Add a New Post</h2>
+    </div><!-- /.column -->
+  </div><!-- /.row -->
+  <div class="one column row">
+    <div class="left floated twelve wide column">
+      <div class="post-form">
+      <%= render partial: "shared/post_form", object: @post, locals: {user: @user, button_label: "Create post"} %>
+      </div>
+    </div><!-- /.column -->
+  </div><!-- /.row -->
+</div><!-- /.grid -->
+
+
