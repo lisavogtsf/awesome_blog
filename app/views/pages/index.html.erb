@@ -2,3 +2,21 @@
 
 <!-- show all pages for given user -->
 <%= render partial: "shared/partial_sidebar" %>
+
+<div class="ui vertically divided page grid right">
+	<div class="one column row">
+		<h2 class="ui header">All Posts</h2>
+	</div>
+<% @posts.each do |post| %>
+
+	<div class="one column row">
+		<div class="column">
+			<h4 class="ui header"><%= post.title %></h4>
+			<p><%= post.created_at %></p>
+			<p><%= post.content %></p>
+		</div>
+	</div>
+
+<% end %>
+	</div>
+<div>

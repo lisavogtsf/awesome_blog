@@ -1,1 +1,14 @@
-<h2>User show</h2>
+<p>LEAVING OUT SIDEBAR FOR NOW</p>
+<p>(should appear at users/<%= @user.id %>)</p>
+
+<h2>User show</h2> 
+
+
+<div>
+	<p>User name: <%= @user.first_name %> <%= @user.last_name %></p>
+	<p>User email: <%= @user.email %></p>
+	<p>Go to user's Pages</p>
+	<p>Go to user's <a href="/users/<%=@user.id%>/posts">Posts</a></p>
+</div>
+
+<h2><a href="/users">See all users</a></h2>
