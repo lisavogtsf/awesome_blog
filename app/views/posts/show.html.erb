@@ -5,7 +5,7 @@
 <div class="ui vertically divided page grid right">
   <div class="one column row">
     <h2 class="ui header"><%=@post.title %></h2>
-    <h5 class="ui header"><%=@post.created_at %></h5>
+    <h5 class="ui header"><%=@post.created_at.to_formatted_s(:long) %></h5>
   </div>
   <div class="one column row">
     <div class="column">
@@ -22,6 +22,7 @@
             <i class="icon inverted circular blue comment"></i> Comments
           </h2>
           <% @comments.each do |comment| %>
+
           <div class="ui comments">
             <div class="comment">
               <% if @comments.length > 0 %>
@@ -32,14 +33,15 @@
               <div class="content">
                 <h3 class="ui title"><%= comment.title %></h3>
                 <div class="metadata">
-                  <span class="date"><%= comment.updated_at %></span>
+                  <span class="date"><%= comment.created_at.to_formatted_s(:long) %></span>
                 </div>
                 <div class="text">
                   <%= comment.body %>
                 </div>
                 <div class="actions">
                   <a class="reply">Reply</a>
-                  <a class="delete">Delete</a>
+                  <%=link_to "Delete",user_post_comment_path(@user, @post, comment) ,method: :delete, class:"delete"%> 
+                  <!-- <a class="delete">Delete</a> -->
                   <a class="edit">Edit</a>
                 </div>
               </div>
@@ -47,10 +49,13 @@
             <% end %>
             <form class="ui reply form">
               <div class="field">
-                <textarea></textarea>
+                <input type="text" placeholder="Title">
+              </div>
+              <div class="field">
+                <textarea placeholder="Write something here..."></textarea>
               </div>
               <div class="ui fluid blue labeled submit icon button">
-                <i class="icon edit"></i> Add Reply
+                <i class="icon edit"></i> Add Comment
               </div>
             </form>
           </div>
