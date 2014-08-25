@@ -1,9 +1,9 @@
-# ## To avoid duplicates after you pull a new db file, EITHER 
+# ## To avoid duplicates after you pull a new db file, EITHER
 # ## selectively uncomment the items you want to add and run $rake db:seed
 # ## OR
 # ## disconnect from your database (stop rails server, quit PG Commander)
-# ## uncomment all commands  
-# ## run $rake db:reset, which will drop all contents of the current database 
+# ## uncomment all commands
+# ## run $rake db:reset, which will drop all contents of the current database
 # ## and remake your datbase for you using the db/seeds.rb file
 
 # # Create users
