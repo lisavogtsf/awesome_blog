@@ -10,7 +10,7 @@
 	<div class="one column row">
 		<div class="column">
 			<h4 class="ui header"><a href="/users/<%= @user.id %>/posts/<%= post.id %>"><%= post.title %></a></h4>
-			<p><%= post.created_at %></p>
+			<p><%= post.created_at.to_formatted_s(:long)  %></p>
 			<p><%= post.content %></p>
 		</div>
 	</div>
