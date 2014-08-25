@@ -19,4 +19,4 @@ Styled with Semantic UI
 
 Lisa's Gist, https://gist.github.com/lisavogtsf/eb7dc2305c842d7d825b
 
-[]Jesse's Gist](https://gist.github.com/MooreJesseB/493d2eb2b94cc57bbb56)
+[Jesse's Gist](https://gist.github.com/MooreJesseB/493d2eb2b94cc57bbb56)
