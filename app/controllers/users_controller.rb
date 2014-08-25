@@ -11,10 +11,12 @@ class UsersController < ApplicationController
 
 	# create new user
 	def create
+
 		user_params = params.require(:user).permit(:first_name, :last_name, :email)
     		newbie = User.create(user_params)
     		redirect_to newbie
     		# redirect_to user_path
+
 
 	end
 
