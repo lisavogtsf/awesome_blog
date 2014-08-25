@@ -41,6 +41,8 @@ class CommentsController < ApplicationController
 	end
 
 	def destroy
+		comment = comment_by_id
+		comment_by_id.destroy
 	end
 
 	private
