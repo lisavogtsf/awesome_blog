@@ -25,6 +25,9 @@ class CommentsController < ApplicationController
 	end
 
 	def update
+		comment = Comment.find_by_id(params[:id])
+		comment_attributes = params.require(:comment).permit(:title, :body)
+		comment.update_attributes(comment_attributes)
 	end
 
 	def destroy

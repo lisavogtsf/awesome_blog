@@ -23,6 +23,8 @@ class PostsController < ApplicationController
 		post_id = params[:id]
 
 		@post = @user.posts.find_by_id(post_id)
+
+		@comments = @post.comments
 	end
 
 	def edit
