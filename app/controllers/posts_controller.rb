@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 		user_id = params[:user_id]
 		@user = User.find_by_id(user_id)
 
-		@posts = @user.posts.all
+		@posts = @user.posts.order('posts.created_at DESC')
 	end
 
 	def new
