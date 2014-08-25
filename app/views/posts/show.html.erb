@@ -1,14 +1,11 @@
 <!-- show.html.erb -->
 <%= render partial: "shared/partial_sidebar" %>
 
-
-<div class="row"><h2 class="ui header right">Posts Show</h2> </div>
-<div class="row"><h2 class="ui header right"></h2></div>
-
-<div class="ui vertically divided grid right">
+<div class="ui vertically divided page grid right">
+	<div class="row"><h2 class="ui header ">Posts Show</h2> </div>
   <div class="one column row">
     <div class="column">
-      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
+      <p><%=@post.title %></p>
     </div>
   </div>
   <div class="two column row">
