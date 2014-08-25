@@ -1,3 +1,5 @@
 <!-- edit.html.erb -->
 
 Edit comment
+
+<%= render partial: "shared/comment_form", object: @comment, locals: {user: @user, context: @context, button_label: "Save changes"} %>

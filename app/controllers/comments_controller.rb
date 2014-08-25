@@ -19,6 +19,7 @@ class CommentsController < ApplicationController
 	end
 
 	def edit
+		@user = User.find_by_id(params[:user_id])
 		@context = context
 		@comment = context.comments.find_by_id(params[:id])
 	end
