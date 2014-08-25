@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_secure_password
 
   has_many :posts
   has_many :pages
@@ -8,6 +9,7 @@ class User < ActiveRecord::Base
             :length => {:minimum => 2}
 
 
+
  validates :email, presence: true, uniqueness: {case_sensitive: false}
 
 def self.authenticate email, password
@@ -15,4 +17,10 @@ def self.authenticate email, password
 end
   # validates_format_of :email,
   #           :with => /\A([\w-]|\.)+@([\w-]|\.)+\.[a-z]{2,3}\z/i
+  validates :email, presence: true, uniqueness: {case_sensitive: false}
+
+  def self.authenticate email, password
+    User.find_by_email(email).try(:authenticate, password)
+
+  end
 end
