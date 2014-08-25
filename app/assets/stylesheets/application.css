@@ -37,3 +37,11 @@
 	position: relative;
 	left: 14rem;
 }
+
+.footer {
+  bottom: 0;
+  width: 100%;
+  right: 0;
+  height: 3em;
+  background-color: red;
+}
