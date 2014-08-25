@@ -1,0 +1,18 @@
+<!-- form to add/edit pages -->
+<%= form_for ([user, page_form]) do |f| %>
+<div class="field">
+  <div class="ui left labeled input">
+    <%= f.text_field :title, placeholder: "Title" %>
+    <div class="ui corner label">
+      <i class="icon asterisk"></i>
+    </div>
+  </div>
+</div>
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Post content..." %>
+    <div class="ui corner label">
+      <i class="icon asterisk"></i>
+    </div>
+  </div>
+  <%= f.submit button_label, :class => "ui green button update" %>
+<% end %>
