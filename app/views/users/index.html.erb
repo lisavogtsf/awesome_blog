@@ -1,38 +1,41 @@
-<%= render partial: "shared/partial_sidebar" %>
-<div class="ui vertically divided page grid right">
-	<div class="one column row"> -->
-		<h2 class="ui header">Awesome Blog Users</h2>
-	</div><!-- closes column -->
-	<div class="one column row">
-		<div class="column">
+<%= render partial: "shared/partial_sidebar_no_user" %>
 
 <!-- display all users in a table -->
 <!-- should be class="ui table" for semanti ui, not working now -->
-	<table>
-		<thead><!--  table headings -->
-			<tr>
-				<th>First Name</th>
-				<th>Last Name</th>
-				<th>email</th>
-				<th>Show User</th>
-			</tr>
-		</thead>
-		<tbody>
-			<% @users.each do |user| %>
-			<tr>
-				<td><%= user.first_name  %></td>
-				<td><%= user.last_name  %></td>
-				<td><%= user.email %></td>
-				<td><a href="users/<%=user.id %>">Show</a></td>
-			</tr>
-			<% end %>	
-		</tbody>	
-		 <!-- <tfoot>
-    			<tr><th colspan="3">
-      				<div class="ui blue labeled icon button"><i class="user icon"></i> Add User</div>
-    				</th>
-    			</tr>
-  		</tfoot> -->
-	</table>
-		</div><!-- closes column -->
-	</div><!-- closes column row -->
+<div class="ui vertically divided page grid right">
+	<div class="one column row">
+		<div class="eight wide column">
+			<h2 class="ui header">Awesome Blog Users</h2>
+			<table class="ui table">
+				<thead><!--  table headings -->
+					<tr>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Email</th>
+						<th>Show User</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @users.each do |user| %>
+					<tr>
+						<td><%= user.first_name  %></td>
+						<td><%= user.last_name  %></td>
+						<td><%= user.email %></td>
+						<td class="show"><a href="users/<%=user.id %>">Show</a></td>
+					</tr>
+					<% end %>
+				</tbody>
+				 <!-- <tfoot>
+		    			<tr><th colspan="3">
+		      				<div class="ui blue labeled icon button"><i class="user icon"></i> Add User</div>
+		    				</th>
+		    			</tr>
+		  		</tfoot> -->
+			</table>
+		</div>
+		<div class="column">
+		</div>
+	</div>
+</div>
+	<!-- </div> --><!-- closes header column row -->
+

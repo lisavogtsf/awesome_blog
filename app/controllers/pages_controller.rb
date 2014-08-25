@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 		user_id = params[:user_id]
 		@user = User.find_by_id(user_id)
 
-		@pages = Page.all		
+		@pages = Page.all
 	end
 
 	# display new page form
@@ -25,8 +25,20 @@ class PagesController < ApplicationController
 	def edit
 		user_id = params[:user_id]
 		@user = User.find_by_id(user_id)
-
+		# binding.pry
 		@page = find_page_by_id
+	end
+
+	def update
+		user_id = params[:user_id]
+		@user = User.find_by_id(user_id)
+		page_id = params[:id]
+		page_to_update = @user.pages.find_by_id(page_id)
+		page = params[:page].permit(:title, :content)
+
+		page_to_update.update_attributes(page)
+
+		redirect_to [@user, page_to_update]
 	end
 
 	# show one page
@@ -41,7 +53,14 @@ class PagesController < ApplicationController
 	# delete the page
 	def destroy
 		user_id = params[:user_id]
+		page_id = params[:id]
 		@user = User.find_by_id(user_id)
+
+		page_to_delete = @user.pages.find_by_id(page_id)
+
+		page_to_delete.destroy
+
+		redirect_to [@user, page_to_delete]
 
 	end
 
