@@ -7,14 +7,12 @@
     <h2 class="ui header"><%=@post.title %></h2>
     <h5 class="ui header"><%=@post.created_at %></h5>
   </div>
-  <div class="two column row">
+  <div class="one column row">
     <div class="column">
       <p><%=@post.content %></p>
 
         <p><%= link_to "Update This?",edit_user_post_path, class: "ui blue button" %></p>
 
-    </div>
-    <div class="column">
     </div>
   </div>
   <div class="two column row">
@@ -26,11 +24,11 @@
           <div class="ui comments">
             <div class="comment">
               <a class="avatar">
-                <img src="/images/demo/avatar.jpg">
+                <%= image_tag "icon_1500.png" %>
               </a>
               <div class="content">
                 <% @comments.each do |comment| %>
-                <a class="title"><%= comment.title %></a>
+                <h3 class="ui title"><%= comment.title %></h3>
                 <div class="metadata">
                   <span class="date"><%= comment.updated_at %></span>
                 </div>
