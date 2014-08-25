@@ -1,5 +1,6 @@
 awesome_blog--a work in progress
 ============
+Angga's GIST link: https://gist.github.com/0211e3552955a6848255.git
 
 Microblog weekend lab
 
