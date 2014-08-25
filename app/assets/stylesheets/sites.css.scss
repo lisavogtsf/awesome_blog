@@ -11,12 +11,18 @@
   background: url(http://miriadna.com/desctopwalls/images/max/Falling-asleep-forest.jpg) bottom center no-repeat;
   background-size: cover;
   padding: 4em;
+  @media screen and (max-width: 900px) {
+    height: 600px;
+    h1 {
+      font-size: 4em;
+    }
+  }
   h1 {
     text-transform:uppercase;
     color: #fff;
     text-shadow: 1px 1px 0 #666;
     text-align: center;
-    font-size: 6em;
+    font-size: 5em;
   }
   p {
     color: #fff;
@@ -27,6 +33,7 @@
   .home-buttons {
     text-align: center;
   }
+
 }
 /** sidebar **/
 

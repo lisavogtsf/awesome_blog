@@ -14,8 +14,10 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		post_attr = params.require[:post].permit(:title, :content)
+
+		post_attr = params.require(:post).permit(:title, :content)
 		post = find_user_by_id.posts.create(post_attr)
+
 		redirect_to [@user, post]
 	end
 
