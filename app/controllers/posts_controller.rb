@@ -14,6 +14,12 @@ class PostsController < ApplicationController
 	end
 
 	def create
+
+		post_attr = params.require(:post).permit(:title, :content)
+
+		post = find_user_by_id.posts.create(post_attr)
+
+		redirect_to [@user, post]
 	end
 
 	def show
@@ -23,6 +29,8 @@ class PostsController < ApplicationController
 		post_id = params[:id]
 
 		@post = @user.posts.find_by_id(post_id)
+
+		@comments = @post.comments
 	end
 
 	def edit

@@ -1,46 +1,30 @@
-
 <div class="ui leftbar inverted vertical menu">
-	<div><!-- surrounds portrait div -->
-			<% if @user != nil%>
-			<!-- users/# has an @user passed to it, but users/index does not -->
-				<div class="portrait-wrapper">
-					<div class="img-crop-circle">
-						<!-- seed images currently not great but working -->
-						<img src="<%= @user.img_url %>" alt="<%= @user.first_name %>">
-					</div>
-				</div><!-- closes portrait -->
-				<div class="header item">
-					<h4 class="ui header center aligned"><%= @user.first_name %></h4>
-				</div>
-			<% else %>	<!-- for users index -->
-				<div class="portrait-wrapper">
-					<div class="img-crop-circle">
-						<img src="http://semantic-ui.com/images/demo/photo2.jpg" alt="Awesome Blog">
-					</div>
-				</div><!-- closes portrait -->
-				<div class="header item">
-					<h4 class="ui header center aligned">All Users</h4>
-				</div>
-			<% end%>
-	</div><!-- closes div that surrounds portrait  and page title-->
-	<% if @user != nil%>
-		<a class="item" href="/users">
-			All Users
-		</a>
-		<!-- link_to is being difficult, using sort of a hybrid of old and new -->
-		<!-- buggy erb link_to: link_to "User Pages", pages_path, id: @user.id :class => "item"  -->
-		<a class="item" href="/users/<%=@user.id%>/pages"><%=@user.first_name%>'s Pages</a>
-		<!-- Create Post link not working, "Missing template posts/create" -->
-		<!--buggy erb: link_to "Create a Post", new_user_post_path(@user), :class => "item" -->
-		<a class="item" href="/users/<%=@user.id%>/posts"><%=@user.first_name%>'s Posts</a>
-	<% else %>
+	<div>
+		<% if (@user.img_url != nil) %>
+		<div class="portrait-wrapper">
+			<div class="img-crop-circle">
 
-	<% end %>
+				<img src="<%= @user.img_url %>" alt="<%= @user.first_name %>">
 
-	<div class="item">
+
+			</div>
+
+		</div>
+		<% end %>
+		<div class="header item">
+			<h4 class="ui header center aligned"><%= @user.first_name %></h4>
+		</div>
+	</div>
+	<a class="item" href="/users">
+		All Users
+	</a>
+	<%= link_to "User Page", user_path(@user), :class => "item" %>
+	<%= link_to "Create a Post", new_user_post_path(@user), :class => "item" %>
+	<!-- <div class="item">
 		<b>More</b>
 		<div class="menu">
-			<a href="/" class="item">Home</a>
-		</div> <!-- closes menu -->
-	</div><!-- closes item -->
+			<a class="item">About</a>
+			<a class="item">Contact Us</a>
+		</div> -->
+	</div>
 </div>
