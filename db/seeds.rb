@@ -30,6 +30,14 @@
 # angga.img_url = "https://avatars3.githubusercontent.com/u/7015675?v=2&s=460"
 # will.img_url = "https://avatars1.githubusercontent.com/u/5432788?v=2&s=460"
 
+# ## Save users
+
+# lisa.save
+# mark.save
+# jesse.save
+# angga.save
+# will.save
+
 # # # # # Pages, either About or Contact
 
 # mark.pages.create({title: "About", content: "I am a whiskey afficionado."})
