@@ -23,9 +23,11 @@
           </h2>
           <div class="ui comments">
             <div class="comment">
-              <a class="avatar">
+              <% if @comments.length > 0 %>
+                   <a class="avatar">
                 <%= image_tag "icon_1500.png" %>
               </a>
+              <% end %>
               <div class="content">
                 <% @comments.each do |comment| %>
                 <h3 class="ui title"><%= comment.title %></h3>
