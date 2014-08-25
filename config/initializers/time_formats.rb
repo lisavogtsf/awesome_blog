@@ -1,0 +1,1 @@
+# Time:DATE_FORMATS[:date_with_hour] = "%b-%d-%Y %H:%M %z"
