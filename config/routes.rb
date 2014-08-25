@@ -4,10 +4,12 @@ AwesomeBlog::Application.routes.draw do
   resources :users do
     resources :posts do 
       resources :comments do
-        resources :comments do
-        	resources :comments
-        end
+        resources :comments
       end
     end
   end
+  # should we allow comments to show independely?
+  # resources :comments do
+  #   resources :comments
+  # end
 end
