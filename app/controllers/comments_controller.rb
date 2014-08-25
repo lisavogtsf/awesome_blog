@@ -16,8 +16,12 @@ class CommentsController < ApplicationController
 	end
 
 	def create
+		@user = user_by_id
+		@post = post_by_id
 		comment_attr = get_comment_attr
-		user_by_id.post_by_id.comments.create(comment_attr)
+	
+		User.find(params[:user_id]).posts.find(params[:post_id]).comments.create(comment_attr)
+		redirect_to [@user, @post]
 	end
 
 	def edit
