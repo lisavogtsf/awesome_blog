@@ -62,7 +62,7 @@ class CommentsController < ApplicationController
 			Post.find_by_id(params[:post_id])
 		elsif params[:comment_id]
 			Comment.find_by_id(params[:comment_id])
-		else 
+		else
 			@error = "Error! Context not found!"
 		end
 	end
