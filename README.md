@@ -1,13 +1,17 @@
-awesome_blog
+awesome_blog--a work in progress
 ============
 
 Microblog weekend lab
 
-Can't wait to get started!!! - Mark Centoni
+To run app: 
+* clone this repo locally
+* run $bundle install
+* $rake db:create
+* $rake db:migrate
+* $rake db:seed
+* then you can work in the $rails console
+* OR run $rails server
+* open http://localhost:3000/ in your browser
 
 
-Hello Angga Wrote this
-
-I wrote a bunch of stuff in HipChat and may put it in the Wiki.
-For now, we hope to meet up sometime Sunday to work together if possible.
-Please keep posting to HipChat about what you're doing. --Lisa
+Styled with Semantic UI
