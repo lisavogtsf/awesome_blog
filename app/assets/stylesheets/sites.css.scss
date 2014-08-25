@@ -1,3 +1,53 @@
 // Place all the styles related to the sites controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/** sidebar **/
+
+.portrait-wrapper {
+  margin: 0 auto;
+  text-align: center;
+}
+.portrait-wrapper h4 {
+  margin: .5em auto;
+  font-size: 24px;
+  color: #fff;
+}
+.ui.menu h4 {
+  color: #fff;
+  margin-bottom: 1em;
+  margin-top: 0;
+}
+.img-crop-circle {
+  width: 100px;
+  height: 100px;
+  margin: 10% auto;
+  border-radius: 100%;
+  overflow: hidden;
+  background-size: cover;
+}
+
+/** slide down form **/
+.slide-down-form {
+  height: 0;
+  width: 40%;
+  background: #999;
+  padding: 0 2em;
+  overflow: hidden;
+  border-radius: 4px;
+  margin: 1em;
+  transition: all .25s ease-out;
+}
+.slide-down-form input {
+  display: block;
+}
+
+.down {
+  height: auto;
+  padding: 2em;
+}
+.submit {
+  display: block;
+  clear: both;
+}
