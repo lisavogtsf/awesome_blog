@@ -1,5 +1,6 @@
 <div class="ui leftbar inverted vertical menu">
   <div>
+    <% if @user != nil %>
     <% if (@user.img_url != nil) %>
     <div class="portrait-wrapper">
       <div class="img-crop-circle">
@@ -11,15 +12,20 @@
 
     </div>
     <% end %>
+    <% end %>
     <div class="header item">
       <h4 class="ui header center aligned"><%= @user.first_name %></h4>
     </div>
   </div>
-  <%= link_to "All Users", users_path, :class => "item" %>
-  <%= link_to "User Page", user_path(@user), :class => "item" %>
-  <%= link_to "Create a Post", new_user_post_path(@user), :class => "item" %>
-  <%= link_to "Logout", logout_url, :class => "item" %>
-  <a href="" class="item"></a>
+  <% if @current_user != nil %>
+    <%= link_to "All Users", users_path, :class => "item" %>
+    <%= link_to "User Page", user_path(@user), :class => "item" %>
+    <%= link_to "Create a Post", new_user_post_path(@user), :class => "item" %>
+    <%= link_to "Logout", logout_url, :class => "item" %>
+  <% else %>
+    <a class="item" href="/users/new">Sign up</a>
+    <a class="item" href="/login">Login</a>
+  <% end %>
 
 
   </div><!-- closes vertical menu -->
