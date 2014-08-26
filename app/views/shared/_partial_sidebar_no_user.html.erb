@@ -3,14 +3,17 @@
   <div class="header item">
     <h4 class="ui header center aligned">Awesome Blog</h4>
   </div>
+    <% if @current_user != nil %>
     <a class="item" href="/users">
       All Users
     </a>
-    <a class="item" href="/posts">
-      All Posts
-    </a>
+    <%= link_to "User Page", user_path(@current_user), :class => "item" %>
+    <%= link_to "Create a Post", new_user_post_path(@current_user), :class => "item" %>
+    <%= link_to "Logout", logout_url, :class => "item" %>
+    <% else %>
     <a class="item" href="/users/new">Sign Up</a>
     <a class="item" href="/login">Login</a>
+    <% end %>
   </div>
   <!-- <div class="item">
     <b>More</b>
