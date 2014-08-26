@@ -9,18 +9,13 @@ AwesomeBlog::Application.routes.draw do
     resources :pages
   end
 
-  post '/comments' => "comments#create"
-  delete '/comments' => "comments#destroy"
-  patch '/comments' => "comments#update"
-
   get '/login' => "sessions#new"
   post "/login" => "sessions#create"
 
   delete '/logout' => "sessions#destroy"
   get '/logout' => "sessions#destroy"
 
-  # should we allow comments to show independely?
-  # resources :comments do
-  #   resources :comments
-  # end
+  post "posts/:post_id/comments", to: "comments#create", :as => "post_comments"
+  post "posts/:post_id/comments/:id", to: "comments#create", :as => "post_comment"
+
 end

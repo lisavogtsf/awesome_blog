@@ -37,23 +37,21 @@
               <div class="content">
                 <h3 class="ui title"><%= comment.title %></h3>
                 <div class="metadata">
-                  <span class="date"><%= comment.created_at.to_formatted_s(:long) %></span>
+                  <span class="date"><%= comment.created_at.to_formatted_s(:long) if comment.created_at %></span>
                 </div>
                 <div class="text">
                   <%= comment.body %>
                 </div>
                 <div class="actions">
                   <a class="reply">Reply</a>
-                  <%=link_to "Delete",user_post_comment_path(@user, @post, comment) ,method: :delete, class:"delete"%>
+                  <%=link_to "Delete", method: :delete, class:"delete"%>
                   <!-- <a class="delete">Delete</a> -->
                   <a class="edit">Edit</a>
                 </div>
               </div>
             </div>
             <% end %>
-            <form class="ui reply form">
-              <%= render partial: "shared/comment_form", locals: {method: :post, context_id: @post[:id], button_label: "Add comment"} %>
-            </form>
+              <%= render partial: "shared/comment_form", locals: {parent: @post, comment: @post.comments.new, button_label: "Add reply"} %>
           </div>
         </div>
       </div>
