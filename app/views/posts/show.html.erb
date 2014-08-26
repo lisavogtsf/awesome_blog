@@ -1,4 +1,5 @@
-<!-- show.html.erb -->
+
+  <!-- show.html.erb -->
 <%= render partial: "shared/partial_sidebar" %>
 
 
@@ -51,15 +52,7 @@
             </div>
             <% end %>
             <form class="ui reply form">
-              <div class="field">
-                <input type="text" placeholder="Title">
-              </div>
-              <div class="field">
-                <textarea placeholder="Write something here..."></textarea>
-              </div>
-              <div class="ui fluid blue labeled submit icon button">
-                <i class="icon edit"></i> Add Comment
-              </div>
+              <%= render partial: "shared/comment_form", locals: {method: :post, context_id: @post[:id], button_label: "Add comment"} %>
             </form>
           </div>
         </div>

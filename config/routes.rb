@@ -2,16 +2,16 @@ AwesomeBlog::Application.routes.draw do
 
   root to: 'sites#index'
   resources :users do
-    resources :posts do
-      resources :comments do
-        resources :comments
-      end
-    end
+    resources :posts
   end
+  
   resources :users do
-    resources :pages do
-    end
+    resources :pages
   end
+
+  post '/comments' => "comments#create"
+  delete '/comments' => "comments#destroy"
+  patch '/comments' => "comments#update"
 
   get '/login' => "sessions#new"
   post "/login" => "sessions#create"

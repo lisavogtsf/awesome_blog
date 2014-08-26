@@ -3,25 +3,9 @@ class CommentsController < ApplicationController
 	# no need for index
 	# comments will always only be displayed in context with their parent
 
-	def show
-		@comment = comment_by_id
-		@comments = @comment.comments
-	end
-
-	def new
-		@user = user_by_id
-		@post = post_by_id
-		@context = context
-		@comment = @context.comments.new
-	end
-
 	def create
-		@user = user_by_id
-		@post = post_by_id
-		comment_attr = get_comment_attr
-	
-		User.find(params[:user_id]).posts.find(params[:post_id]).comments.create(comment_attr)
-		redirect_to [@user, @post]
+		comment_attr = params.require(:comment).permit(:title, :body)
+		user_by_id.post_by_id.comments.create(comment_attr)
 	end
 
 	def edit
@@ -41,12 +25,8 @@ class CommentsController < ApplicationController
 	end
 
 	def destroy
-		@user = user_by_id
-		@post = post_by_id
 		comment = comment_by_id
 		comment_by_id.destroy
-
-		redirect_to [@user, @post]
 	end
 
 	private
@@ -72,7 +52,7 @@ class CommentsController < ApplicationController
 			Post.find_by_id(params[:post_id])
 		elsif params[:comment_id]
 			Comment.find_by_id(params[:comment_id])
-		else
+		else 
 			@error = "Error! Context not found!"
 		end
 	end
