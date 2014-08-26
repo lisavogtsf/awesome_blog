@@ -20,7 +20,6 @@ class UsersController < ApplicationController
     		newbie = User.create(user_params)
     		redirect_to newbie
     		# redirect_to user_path
-
 	end
 
 	# edit the user
