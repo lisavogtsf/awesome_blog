@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-
+before_action :is_authenticated?	
 	# no need for index
 	# comments will always only be displayed in context with their parent
 
