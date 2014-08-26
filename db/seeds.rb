@@ -8,11 +8,11 @@
 
 # # # # Create users
 
-# lisa = User.create({first_name: "Lisa", last_name: "Vogt", email: "lisavogt.sf@gmail.com", password: "123", password_confirmation: "1234"})
-# jesse = User.create({first_name: "Jesse", last_name: "Moore", email: "moore.jesseb@gmail.com", password: "123", password_confirmation: "1234"})
-# angga = User.create({first_name: "Angga", last_name: "Putra", email: "angga.w.putra@gmail.com", password: "123", password_confirmation: "1234"})
-# will = User.create({first_name: "Will", last_name: "Curotto", email: "WRONGADDRESS@AOL.COM", password: "123", password_confirmation: "1234"})
-# mark = User.create({first_name: "Mark", last_name: "Centoni", email: "marklc44@gmail.com", password: "123", password_confirmation: "1234"})
+# lisa = User.create({first_name: "Lisa", last_name: "Vogt", email: "lisavogt.sf@gmail.com", password: "1234", password_confirmation: "1234"})
+# jesse = User.create({first_name: "Jesse", last_name: "Moore", email: "moore.jesseb@gmail.com", password: "1234", password_confirmation: "1234"})
+# angga = User.create({first_name: "Angga", last_name: "Putra", email: "angga.w.putra@gmail.com", password: "1234", password_confirmation: "1234"})
+# will = User.create({first_name: "Will", last_name: "Curotto", email: "WRONGADDRESS@AOL.COM", password: "1234", password_confirmation: "1234"})
+# mark = User.create({first_name: "Mark", last_name: "Centoni", email: "marklc44@gmail.com", password: "1234", password_confirmation: "1234"})
 
 
 # # # # Find users and save to variables
