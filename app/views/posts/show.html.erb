@@ -11,11 +11,11 @@
     <div class="column">
       <p><%=@post.content %></p>
 
-      <!-- if params user = session user -->
-      <!-- display this -->
+      <!-- conditional: if current user owns this post, allow editing -->
       <% if @editable %>
         <p><%= link_to "Update This?", edit_user_post_path, class: "ui blue button" %></p>
       <% end %>
+
     </div>
   </div>
   <div class="two column row">

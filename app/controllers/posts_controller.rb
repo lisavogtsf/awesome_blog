@@ -28,7 +28,7 @@ class PostsController < ApplicationController
 		@user = User.find_by_id(user_id)
 
 		if current_user != nil
-			user_id == current_user.id { true } ? @editable = true : @editable = false
+			user_id.to_i == current_user.id { true } ? @editable = true : @editable = false
 		end
 
 		post_id = params[:id]
