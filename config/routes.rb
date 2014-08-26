@@ -19,6 +19,7 @@ AwesomeBlog::Application.routes.draw do
   delete '/logout' => "sessions#destroy"
   get '/logout' => "sessions#destroy"
 
+ get "/users/:user_id/tags/:id", to: "tag_users#show", :as => "tag_user"
   # should we allow comments to show independely?
   # resources :comments do
   #   resources :comments
