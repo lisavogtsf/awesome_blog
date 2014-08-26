@@ -14,7 +14,9 @@
     <div class="ten wide column">
       <p><%=@page.content %></p>
 
-        <p><%= link_to "Update This?",edit_user_page_path, class: "ui blue button" %></p>
+      <% if @editable %>
+      <p><%= link_to "Update This?",edit_user_page_path, class: "ui blue button" %></p>
+      <% end %>
     </div>
     <div class="two wide column">
     </div>
