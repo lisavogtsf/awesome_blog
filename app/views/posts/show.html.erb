@@ -11,8 +11,11 @@
     <div class="column">
       <p><%=@post.content %></p>
 
-        <p><%= link_to "Update This?",edit_user_post_path, class: "ui blue button" %></p>
-
+      <!-- if params user = session user -->
+      <!-- display this -->
+      <% if @editable %>
+        <p><%= link_to "Update This?", edit_user_post_path, class: "ui blue button" %></p>
+      <% end %>
     </div>
   </div>
   <div class="two column row">
@@ -40,7 +43,7 @@
                 </div>
                 <div class="actions">
                   <a class="reply">Reply</a>
-                  <%=link_to "Delete",user_post_comment_path(@user, @post, comment) ,method: :delete, class:"delete"%> 
+                  <%=link_to "Delete",user_post_comment_path(@user, @post, comment) ,method: :delete, class:"delete"%>
                   <!-- <a class="delete">Delete</a> -->
                   <a class="edit">Edit</a>
                 </div>
