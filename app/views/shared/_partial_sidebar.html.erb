@@ -20,8 +20,8 @@
   </div>
   <% if @current_user != nil %>
     <%= link_to "All Users", users_path, :class => "item" %>
-    <%= link_to "User Page", user_path(@user), :class => "item" %>
-    <%= link_to "Create a Post", new_user_post_path(@user), :class => "item" %>
+    <%= link_to "User Page", user_path(@current_user), :class => "item" %>
+    <%= link_to "Create a Post", new_user_post_path(@current_user), :class => "item" %>
     <%= link_to "Logout", logout_url, :class => "item" %>
   <% else %>
     <a class="item" href="/users/new">Sign up</a>
