@@ -23,6 +23,7 @@ class UsersController < ApplicationController
 
 	end
 
+
 	# edit the user
 	def edit
 		@current_user = current_user
