@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 	def index
 		@users = User.all
 		@current_user = current_user
-		# binding.pry
+		#binding.pry
 	end
 
 	# display new user form
