@@ -3,6 +3,7 @@ class PostsController < ApplicationController
 	before_action :is_authenticated?
 
 	def index
+
 		user_id = params[:user_id]
 		@user = User.find_by_id(user_id)
 
@@ -82,5 +83,6 @@ class PostsController < ApplicationController
 		user_id = params[:user_id]
 		@user = User.find_by_id(user_id)
 	end
+
 
 end
