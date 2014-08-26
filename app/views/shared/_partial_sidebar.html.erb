@@ -15,16 +15,11 @@
       <h4 class="ui header center aligned"><%= @user.first_name %></h4>
     </div>
   </div>
-  <a class="item" href="/users">
-    All Users
-  </a>
+  <%= link_to "All Users", users_path, :class => "item" %>
   <%= link_to "User Page", user_path(@user), :class => "item" %>
   <%= link_to "Create a Post", new_user_post_path(@user), :class => "item" %>
-  <!-- <div class="item">
-    <b>More</b>
-    <div class="menu">
-      <a class="item">About</a>
-      <a class="item">Contact Us</a>
-    </div> -->
-  </div>
-</div>
+  <%= link_to "Logout", logout_path, :class => "item" %>
+  <a href="" class="item"></a>
+  <div><%= "params.inspect" %></div>
+
+  </div><!-- closes vertical menu -->
