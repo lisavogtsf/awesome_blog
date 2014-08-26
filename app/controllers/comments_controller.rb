@@ -4,6 +4,8 @@ class CommentsController < ApplicationController
   # comments will always only be displayed in context with their parent
   before_action :find_parent
 
+before_action :is_authenticated?	
+
   def create
     comment_attr = params.require(:comment).permit(:title, :body)
     @parent.comments.create(comment_attr)

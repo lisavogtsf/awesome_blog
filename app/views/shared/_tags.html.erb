@@ -1,0 +1,7 @@
+<div class="row">
+	<% tags.each do |tag|%>
+		<div class="column">
+			<%= link_to tag.name, tag_user_path(user.id, tag.id) %>
+		</div>
+	<% end %>
+</div>

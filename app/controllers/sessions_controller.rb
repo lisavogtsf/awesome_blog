@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 	def new
-		
+
   end
 
   def create
@@ -9,9 +9,9 @@ class SessionsController < ApplicationController
 
 	 if @user
 	 	session[:user_id] = @user.id
-	    	redirect_to users_path
-	   	 else 
-	    	render text: "I have no idea who you are."	
+    redirect_to users_path
+	else
+	 render text: "I have no idea who you are."
 	 end
   end
 
