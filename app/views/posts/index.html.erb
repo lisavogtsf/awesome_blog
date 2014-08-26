@@ -1,20 +1,22 @@
 <!-- index.html.erb -->
 <%= render partial: "shared/partial_sidebar" %>
 
-<div class="ui vertically divided page grid right">
-	<div class="one column row">
-		<h2 class="ui header">All Posts</h2>
+<div class="ui page grid right">
+	<div class="row">
+		<div class="column">
+			<h2 class="ui header">All Posts</h2>
+		</div>
 	</div>
 <% @posts.each do |post| %>
 
-	<div class="one column row">
-		<div class="column">
-			<h4 class="ui header"><a href="/users/<%= @user.id %>/posts/<%= post.id %>"><%= post.title %></a></h4>
-			<p><%= post.created_at.to_formatted_s(:long)  %></p>
-			<p><%= post.content %></p>
+	<div class="row">
+		<div class="thirteen wide column">
+			<div class="ui segment stacked">
+				<h4 class="ui header"><a href="/users/<%= @user.id %>/posts/<%= post.id %>"><%= post.title %></a></h4>
+				<p><%= post.created_at.to_formatted_s(:long)  %></p>
+				<p><%= post.content %></p>
+			</div>
 		</div>
 	</div>
-
 <% end %>
-	</div>
 <div>
