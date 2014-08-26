@@ -9,11 +9,17 @@
     </div>
   </div>
 </div>
-  <div class="field">
-  	<%= f.text_area :content, placeholder: "Post content..." %>
-    <div class="ui corner label">
-      <i class="icon asterisk"></i>
-    </div>
+<div class="field">
+	<%= f.text_area :content, placeholder: "Post content..." %>
+  <div class="ui corner label">
+    <i class="icon asterisk"></i>
   </div>
-	<%= f.submit button_label, :class => "ui green button update" %>
+</div>
+<div class="ui left labeled input">
+  <%= text_field_tag :tags, nil, placeholder: "Tag" %>
+  <div class="ui corner label">
+    <i class="icon asterisk"></i>
+  </div>
+</div>
+<%= f.submit button_label, :class => "ui green button update" %>
 <% end %>
