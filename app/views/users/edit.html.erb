@@ -1,3 +1,13 @@
 <!-- edit.html.erb -->
+<%= render partial: "shared/partial_sidebar" %>
+
+<div class="ui vertically divided page grid right">
+  <div class="two column row">
+    <div class="column">
+      <h2 class="ui header">Edit User</h2>
 
 <%= render partial: "shared/user_form", object: @user, locals: {button_label: "Save changes"} %>
+
+    </div>
+  </div>
+</div>
