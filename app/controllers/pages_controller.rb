@@ -46,6 +46,10 @@ class PagesController < ApplicationController
 		user_id = params[:user_id]
 		@user = User.find_by_id(user_id)
 
+		if current_user != nil
+			user_id.to_i == current_user.id { true } ? @editable = true : @editable = false
+		end
+
 		page_id = params[:id]
 		@page = @user.pages.find_by_id(page_id)
 	end
