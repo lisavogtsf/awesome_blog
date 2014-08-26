@@ -20,7 +20,16 @@ class PostsController < ApplicationController
 	def create
 
 		post_attr = params.require(:post).permit(:title, :content)
+		tag_data = params[:tags].split(",").map(&:strip).map(&:downcase)
 		post = find_user_by_id.posts.create(post_attr)
+
+		tag_data.each do |tag_str|
+			tag = Tag.find_by_name(tag_str)
+			if tag == nil
+				tag = Tag.create(name: tag_str)
+			end
+			post.tags << tag
+		end
 		redirect_to [@user, post]
 	end
 
