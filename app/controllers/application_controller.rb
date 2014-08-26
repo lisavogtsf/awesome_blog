@@ -5,9 +5,11 @@ class ApplicationController < ActionController::Base
 
 
     def is_authenticated?
+  		unless current_user do
 
-  		redirect_to login_path
-
+  		redirect_to login_path unless current_user
+  	 	end
+    	end
 	end
 
   def current_user
