@@ -1,5 +1,10 @@
 <%=form_for :user do |f| %>
+<div class="field">
 	<%=f.text_field :email, placeholder:"E-mail" %>
+</div>
+<div class="field">
 	<%=f.password_field :password, placeholder: "Password" %>
-	<%=f.submit :button_label%>
+</div>
+	<%=f.submit button_label, class: "ui green button" %>
+
 <% end %>
