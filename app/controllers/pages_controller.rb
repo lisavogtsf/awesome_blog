@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+before_action :is_authenticated?	
+
 	def index
 		user_id = params[:user_id]
 		@user = User.find_by_id(user_id)

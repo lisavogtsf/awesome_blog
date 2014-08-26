@@ -1,4 +1,4 @@
-<%= render partial: "shared/partial_sidebar_no_user" %>
+<%= render partial: "shared/partial_sidebar" %>
 
 
 <div class="ui page grid right">
@@ -11,7 +11,7 @@
 	<% if @current_user.id != user.id %>
 	  <div class="row">
 	    <div class="thirteen wide column">
-		    <div class="ui segment stacked">
+		    <div class="ui blue segment stacked">
 		    	<img class="ui circular small image" src="<%= user.img_url %>"><a href="../users/<%=user.id %>">
 		      <p class="text center"><%= user.first_name %> <%=user.last_name %></p></a>
 		    	<% user.posts.order('updated_at DESC').limit('2').each do |post| %>
