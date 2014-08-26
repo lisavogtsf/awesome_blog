@@ -4,14 +4,14 @@
 <div class="ui page grid right">
 	<div class="row">
 		<div class="column">
-			<h2 class="ui header">All Posts</h2>
+			<h2 class="ui header"><%=@user.first_name %>'s Posts</h2>
 		</div>
 	</div>
 <% @posts.each do |post| %>
 
 	<div class="row">
 		<div class="thirteen wide column">
-			<div class="ui segment stacked">
+			<div class="ui blue segment stacked">
 				<h4 class="ui header"><a href="/users/<%= @user.id %>/posts/<%= post.id %>"><%= post.title %></a></h4>
 				<p><%= post.created_at.to_formatted_s(:long)  %></p>
 				<p><%= post.content %></p>
