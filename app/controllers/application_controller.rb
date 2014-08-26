@@ -5,12 +5,11 @@ class ApplicationController < ActionController::Base
 
 
   def is_authenticated?
-  	redirect_to login_path unless current_user
-  	except root_path
-	end
+    redirect_to login_path unless current_user
+  end
 
   def current_user
-  	@current_user ||= User.find_by(id: session[:user_id])
+    @current_user ||= User.find_by(id: session[:user_id])
   end
 
 end
