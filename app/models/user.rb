@@ -14,10 +14,16 @@ validates :last_name,
 
  validates :email, presence: true, uniqueness: {case_sensitive: false}
 
+   validates_format_of :email,
+             :with => /\A([\w-]|\.)+@([\w-]|\.)+\.[a-z]{2,3}\z/i
+    validates :password,
+    		:presence => true,
+    		:length => {:minimum => 6}
+
 def self.authenticate email, password
 	User.find_by_email(email).try(:authenticate,password)
 end
-  # validates_format_of :email,
-  #           :with => /\A([\w-]|\.)+@([\w-]|\.)+\.[a-z]{2,3}\z/i
+
+
 
 end

@@ -4,11 +4,26 @@
   <div class="field">
   	<%= f.text_field :first_name, placeholder: "First name" %>
   </div>
+
   <div class="field">
   	<%= f.text_field :last_name, placeholder: "Last name" %>
   </div>
   <div class="field">
 	<%= f.text_field :email, placeholder: "email"%>
 </div>
+<div class="field">
+	<%= f.text_field :email, placeholder: "email validation"%>
+</div>
+  <div class="field">
+	<%= f.password_field :password, placeholder: "password"%>
+</div>
+<div class="field">
+	<%= f.password_field :password_validator, placeholder: "password validation"%>
+</div>
+
+
+
+
+
 	<%= f.submit button_label, class: "ui green button" %>
 <% end %>
