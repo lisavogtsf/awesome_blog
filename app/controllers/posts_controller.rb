@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+
+	before_action :is_authenticated?
+
 	def index
 		user_id = params[:user_id]
 		@user = User.find_by_id(user_id)
@@ -16,9 +19,7 @@ class PostsController < ApplicationController
 	def create
 
 		post_attr = params.require(:post).permit(:title, :content)
-
 		post = find_user_by_id.posts.create(post_attr)
-
 		redirect_to [@user, post]
 	end
 
@@ -26,8 +27,11 @@ class PostsController < ApplicationController
 		user_id = params[:user_id]
 		@user = User.find_by_id(user_id)
 
-		post_id = params[:id]
+		if current_user != nil
+			user_id.to_i == current_user.id { true } ? @editable = true : @editable = false
+		end
 
+		post_id = params[:id]
 		@post = @user.posts.find_by_id(post_id)
 
 		@comments = @post.comments
