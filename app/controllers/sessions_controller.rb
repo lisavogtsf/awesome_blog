@@ -16,6 +16,6 @@ class SessionsController < ApplicationController
 
   def destroy
   	session[:user_id] = nil
-  	render text: "Logged out."
+  	redirect_to site_path
   end
 end
