@@ -45,6 +45,7 @@ class PostsController < ApplicationController
 		@post = @user.posts.find_by_id(post_id)
 
 		@comments = @post.comments
+		@post_tags = @post.tags
 	end
 
 	def edit
