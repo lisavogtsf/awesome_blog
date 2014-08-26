@@ -1,1 +1,17 @@
-new.html.erb
+
+<div class="ui vertically divided page grid right">
+  <div class="one column row">
+    <div class="left floated twelve wide column">
+      <div class="row"><h2 class="ui header">Login</h2></div>
+    </div><!-- /.column -->
+  </div><!-- /.row -->
+  <div class="one column row">
+    <div class="left floated twelve wide column">
+      <!-- when using post form, drop it into a div class="post-form" -->
+      <!--to pick up appropriate styles -->
+      <div class="post-form">
+      <%= render partial: "shared/login_form", object: @user, locals: {user: @user, button_label: "Create post"} %>
+      </div>
+    </div><!-- /.column -->
+  </div><!-- /.row -->
+</div><!-- /.grid -->
