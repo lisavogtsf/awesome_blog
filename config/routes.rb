@@ -13,11 +13,11 @@ AwesomeBlog::Application.routes.draw do
     end
   end
 
-  get '/login' => "session#new"
-  post "/login" => "session#create"
+  get '/login' => "sessions#new"
+  post "/login" => "sessions#create"
 
-  delete '/logout' => "session#destroy"
-  get '/logout' => "session#destroy"
+  delete '/logout' => "sessions#destroy"
+  get '/logout' => "sessions#destroy"
 
   # should we allow comments to show independely?
   # resources :comments do
