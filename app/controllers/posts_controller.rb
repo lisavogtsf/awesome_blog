@@ -19,9 +19,10 @@ class PostsController < ApplicationController
 
 	def create
 
+		# does not currently hadle duplicate tags in the same new post
 		post_attr = params.require(:post).permit(:title, :content)
-		tag_data = params[:tags].split(",").map(&:strip).map(&:downcase)
 		post = find_user_by_id.posts.create(post_attr)
+		tag_data = params[:tags].split(/\,\s*|\s*\#|\s+/)
 
 		tag_data.each do |tag_str|
 			tag = Tag.find_by_name(tag_str)
@@ -45,7 +46,7 @@ class PostsController < ApplicationController
 		post_id = params[:id]
 		@post = @user.posts.find_by_id(post_id)
 		@comments = @post.comments
-		@post_tags = @post.tags
+		
 	end
 
 	def edit
@@ -54,6 +55,8 @@ class PostsController < ApplicationController
 
 		post_id = params[:id]
 		@post = @user.posts.find_by_id(post_id)
+
+		
 	end
 
 	def update
@@ -63,6 +66,7 @@ class PostsController < ApplicationController
 
 		post_to_update = @user.posts.find_by_id(post_id)
 		@post = post_to_update.update_attributes(post)
+
 
 		redirect_to [@user, post_to_update]
 	end
