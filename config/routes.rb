@@ -9,7 +9,10 @@ AwesomeBlog::Application.routes.draw do
   resources :posts do
     resources :comments, only: [:create]
   end
+  
   post "posts/:post_id/comments/:id", to: "comments#create", :as => "post_comment"
+  # post "comments/:comment_id/comments/:id", to: "comments#create", :as => "comment_comments"
+  # post "posts/:post_id/comments", to: "comments#create", :as => "post_comments"
   
   resources :users do
     resources :pages
@@ -20,10 +23,6 @@ AwesomeBlog::Application.routes.draw do
 
   delete '/logout' => "sessions#destroy"
   get '/logout' => "sessions#destroy"
-
-
-  # post "posts/:post_id/comments", to: "comments#create", :as => "post_comments"
-
 
  get "/users/:user_id/tags/:id", to: "tag_users#show", :as => "tag_user"
 
