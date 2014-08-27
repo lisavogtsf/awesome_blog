@@ -8,7 +8,7 @@
 <div class="ui vertically divided page grid right">
   <div class="one column row">
     <h2 class="ui header"><%=@page.title %></h2>
-    <h5 class="ui header"><%=@page.created_at %></h5>
+    <h5 class="ui header"><%=@page.created_at.to_formatted_s(:long_ordinal)  %></h5>
   </div>
   <div class="one column row">
     <div class="ten wide column">
