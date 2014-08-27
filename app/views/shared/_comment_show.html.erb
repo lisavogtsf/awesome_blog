@@ -17,10 +17,10 @@
       <!-- <a class="delete">Delete</a> -->
       <!-- <a class="edit">Edit</a> -->
     </div>
-    <%= render partial: "shared/comment_form", locals: {parent: comment, comment: @post.comments.new, button_label: "Add reply"} %>
+    <%# render partial: "shared/comment_form", locals: {parent: comment, comment: comment.comments.new, button_label: "Add reply"} %>
     <div class="comments">
       <% comment.comments.each do |sub_comment| %>
-        <%= render partial: "shared/comment_show", locals: {comment: sub_comment} %>
+        <%= render partial: "shared/comment_show", locals: {user: user, comment: sub_comment} %>
       <% end %>  
     </div>
   </div>

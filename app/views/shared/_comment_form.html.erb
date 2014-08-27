@@ -1,6 +1,6 @@
 
-
 <%= form_for ([parent, comment]) do |f| %>
+<%# f.hidden_field user: user %>
 <div class="field">
   <div class="ui left labeled input">
   	<%= f.text_field :title, placeholder: "Tie" %>
@@ -19,8 +19,5 @@
     <i class="icon edit"></i>
     <%= f.submit button_label, :class => "ui button" %>
   </div>
-<% end %>
-<% comment.comments.each do | sub_comment | %>
-  <%= render partial: "shared/comment_form", locals: { comment: sub_comment} %>
 <% end %>
 
