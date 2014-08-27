@@ -1,7 +1,8 @@
-<div class="row">
-	<% tags.each do |tag|%>
-		<div class="column">
-			<%= link_to tag.name, tag_user_path(user.id, tag.id) %>
+<div class="ui horizontal list">
+	<% @post.tags.each do |tag|%>
+		<div class="item">
+		<!-- change to link_to and get ids  -->
+			<%= tag.name %>
 		</div>
 	<% end %>
 </div>
