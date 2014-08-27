@@ -1,6 +1,5 @@
 <!-- _comment_show.html.erb -->
-
-<div class="comment">
+<div class="comment comment-con">
    <a class="avatar">
     <%= image_tag "icon_1500.png" %>
   </a>
@@ -13,11 +12,12 @@
       <%= comment.body %>
     </div>
     <div class="actions">
-      <a class="reply">Reply</a>
+      <!-- <a href="" class="comment" data-comment-id="<%= comment.id %>">Reply</a> -->
       <%=link_to "Delete", method: :delete, class:"delete"%>
       <!-- <a class="delete">Delete</a> -->
       <!-- <a class="edit">Edit</a> -->
     </div>
+    <%= render partial: "shared/comment_form", locals: {parent: comment, comment: @post.comments.new, button_label: "Add reply"} %>
     <div class="comments">
       <% comment.comments.each do |sub_comment| %>
         <%= render partial: "shared/comment_show", locals: {comment: sub_comment} %>
