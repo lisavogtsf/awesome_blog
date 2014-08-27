@@ -2,13 +2,14 @@
 <%= render partial: "shared/partial_sidebar" %>
 
 
-<div class="ui vertically divided page grid right">
+<div class="ui page grid right">
   <div class="one column row">
     <h2 class="ui header"><%=@post.title %></h2>
     <h5 class="ui header"><%=@post.created_at.to_formatted_s(:long) %></h5>
   </div>
   <div class="one column row">
-    <div class="column">
+    <div class="fourteen wide column">
+    <%= render partial: "shared/tags" %>
       <p><%=@post.content %></p>
 
       <!-- conditional: if current user owns this post, allow editing -->
