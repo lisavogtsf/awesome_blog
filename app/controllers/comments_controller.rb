@@ -2,12 +2,12 @@ class CommentsController < ApplicationController
 
   # no need for index
   # comments will always only be displayed in context with their parent
-  before_action :find_parent
+  before_action :find_parent, :find_post
 
 before_action :is_authenticated?	
 
   def create
-    comment_attr = params.require(:comment).permit(:title, :body)
+    comment_attr = get_comment_attr
     @parent.comments.create(comment_attr)
     redirect_to_post
   end
@@ -37,8 +37,11 @@ before_action :is_authenticated?
       end
     end
 
-    def redirect_to_post
+    def find_post
+      @post = Post.find_by_id(params[:post_id])
+    end
 
-        redirect_to user_post_path params[:user_id], params[:id]
+    def redirect_to_post
+        redirect_to user_post_path params[:user_id], @post.id
       end
 end
