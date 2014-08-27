@@ -16,9 +16,9 @@
       <h4 class="ui header center aligned"><%= @current_user.first_name %></h4>
     </div>
     <% end %>
-    
+
   </div>
-  
+
     <%= link_to "All Users", users_path, :class => "item" %>
     <%= link_to "User Page", user_path(@current_user), :class => "item" %>
     <%= link_to "Create a Post", new_user_post_path(@current_user), :class => "item" %>
