@@ -34,7 +34,8 @@ class PostsController < ApplicationController
 	end
 
 	def show
-		user_id = params[:user_id]
+		@post = Post.find_by_id(params[:id])
+		user_id = @post.user_id
 		@user = User.find_by_id(user_id)
 
 		if current_user != nil
@@ -43,7 +44,6 @@ class PostsController < ApplicationController
 
 		post_id = params[:id]
 		@post = @user.posts.find_by_id(post_id)
-		# binding.pry
 		@comments = @post.comments
 		@post_tags = @post.tags
 	end

@@ -42,6 +42,6 @@ before_action :is_authenticated?
     end
 
     def redirect_to_post
-        redirect_to user_post_path params[:user_id], @post.id
+        redirect_to post_path @post.id
       end
 end
