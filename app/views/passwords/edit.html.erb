@@ -1,1 +1,26 @@
-Test
+<%= render partial: "shared/partial_sidebar" %>
+
+
+
+
+<div class="ui vertically divided page grid right">
+	<div class="two column row">
+		<div class="column">
+			<h2 class="ui header">Password Reset</h2>
+			<div class="ui form">
+				<%=form_tag password_path(@code), method: "put" do %>
+				<div class="field">
+					<%=password_field :password, placeholder:"Password" %>
+				</div>
+				<div class="field">
+					<%=password_field :password_confirmation, placeholder: "Password Conformation" %>
+				</div>
+					<%=submit_tag "submit change", class: "ui green button" %>
+
+				<% end %>
+
+			</div>
+		</div>
+		<div class="column"></div>
+	</div>
+</div>
