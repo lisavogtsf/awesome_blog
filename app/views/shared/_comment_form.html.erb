@@ -20,4 +20,7 @@
     <%= f.submit button_label, :class => "ui button" %>
   </div>
 <% end %>
+<% comment.comments.each do | sub_comment | %>
+  <%= render partial: "shared/comment_form", locals: { comment: sub_comment} %>
+<% end %>
 
