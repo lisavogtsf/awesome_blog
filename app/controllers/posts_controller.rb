@@ -43,7 +43,7 @@ class PostsController < ApplicationController
 
 		post_id = params[:id]
 		@post = @user.posts.find_by_id(post_id)
-
+		# binding.pry
 		@comments = @post.comments
 		@post_tags = @post.tags
 	end
