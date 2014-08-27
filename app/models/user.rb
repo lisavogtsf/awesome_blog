@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
           :length => {:minimum => 2}
 
   validates :email, presence: true, uniqueness: {case_sensitive: false}
-  validates :email, :format => {with: /\A([\w-]|\.)+@([\w-]|\.)+\.[a-z]{2,3}\z/i} 
+  validates :email, :format => {with: /\A([\w-]|\.)+@([\w-]|\.)+\.[a-z]{2,3}\z/i}
   validates :password, :presence => true, :length => {:minimum => 6}
 
   def self.authenticate email, password
@@ -23,6 +23,7 @@ class User < ActiveRecord::Base
   def set_password_reset
     self.code = SecureRandom.urlsafe_base64
     self.expires_at = 4.hours.from_now
+    self.save!
   end
 
 
