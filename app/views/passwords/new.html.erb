@@ -1,0 +1,19 @@
+<%= render partial: "shared/partial_sidebar" %>
+
+<div class="ui vertically divided page grid right">
+  <div class="two column row">
+    <div class="column">
+      <h2 class="ui header">Reset Password</h2>
+      <div class="ui form">
+			<%= form_tag passwords_path do %>
+			<div class="field">
+		    <%= text_field_tag :email, nil, :placeholder => "Enter email" %></br>
+		    </div>
+		    <%= submit_tag "Send me a reset email", class:"ui blue button"%></br>
+		    <% end %>
+		 </div>
+    </div>
+    <div class="column">
+    </div>
+  </div>
+</div>

@@ -1,5 +1,6 @@
 AwesomeBlog::Application.routes.draw do
 
+  resources :passwords
   root to: 'sites#index'
   resources :users do
     resources :posts
