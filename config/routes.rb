@@ -13,6 +13,7 @@ AwesomeBlog::Application.routes.draw do
 
   post "posts/:post_id/comments", to: "comments#create", :as => "post_comments"
   post "posts/:post_id/comments/:id", to: "comments#create", :as => "post_comment"
+  delete 'posts/:id/comments/:id', to: "comments#destroy", :as => "delete_comment"
   # post "comments/:id/comment", to: "comments#create", :as => "comment_comments"
 
   get '/login' => "sessions#new"
