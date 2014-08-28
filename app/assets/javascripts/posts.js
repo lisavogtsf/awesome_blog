@@ -8,30 +8,46 @@ $(document).ready(function(){
 	}
 
 	$.when(getPosts(userId)).done(function(result){
-				console.log(result)
-				var compiledTemplate = HandlebarsTemplates['post/new']({result: result});
-				$('.grid.right').append(compiledTemplate);
+		console.log(result)
+		var compiledTemplate = HandlebarsTemplates['post/new']({result: result});
+		$('#results').append(compiledTemplate);
 	})
 
 	function createPosts(id, data) {
 		return $.ajax({
 			method: 'post',
-			url: "/users/" + id + "posts/new",
+			url: "/users/" + id + "/posts",
 			data: data
 		});
 	}
 
-	// console.log(getPosts(3))
-
 	//show new Post
-	$(".update").on("onclick", function(e){
+	$("#new_post").on("submit", function(e){
 		e.preventDefault();
+		console.log("form submitted")
 		var post = {
-			title: $("#post_title").val(),
-			content: $("#post_content").val(),
+			post: {
+				title: $("#post_title").val(),
+				content: $("#post_content").val()
+			},
 			tags: $("#tags").val()
-		}
-		$.when(createPosts(userId, post), function(post){
+		};
+		$.when(createPosts(userId, post)).done(function(post){
+			console.log("post returned: ", post)
+			$('#post_title').val('');
+			$('#post_content').val('');
+			$('#tags').val('');
+			$.when(getPosts(userId)).done(function(result){
+				console.log(result)
+				var compiledTemplate = HandlebarsTemplates['post/new']({result: result});
+				$('#results').html(compiledTemplate);
 			})
+		})
 	})
-})
+}); // end document ready
+
+
+
+
+
+

@@ -1,7 +1,15 @@
 {{#each result}}
 <div class="one column row">
-	<div class="column">
-<p>{{title}}</p>
-</div>
+  <div class="column">
+    <div class="ui blue segment stacked">
+      <h4 class="ui header">
+        <a href="/users/{{user_id}}/posts/{{id}}">
+        {{title}}
+      </a>
+      <p>{{created_at}}</p>
+      <p>{{content}}</p>
+    </h4>
+    </div>
+  </div>
 </div>
 {{/each}}
