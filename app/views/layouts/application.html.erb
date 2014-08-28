@@ -14,7 +14,9 @@
 	<link class="ui" rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/0.19.0/css/semantic.min.css">
 
 </head>
-	<body id="home" class="Grid">
+	<body id="home" class="Grid <%= "#{controller.controller_name} #{controller.action_name}".strip %>" >
+
+
 
 
 			<%= yield %>

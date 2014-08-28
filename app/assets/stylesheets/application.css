@@ -23,6 +23,20 @@ a {
   color: #5AC3F5;
 }
 
+body {
+  top: 0; 
+  left: .1rem;
+  right: 16%;
+  position: absolute;
+}
+
+.sites.index {  
+  top: 0; 
+  left: 0;
+  right: 0;
+  position: relative;
+}
+
 .ui.leftbar {
   position: fixed;
   width: 75px;

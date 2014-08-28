@@ -17,6 +17,15 @@
 //= require_tree .
 
 $(document).on("ready page:load", function(){
+  var leftOffset = parseInt($("body").css('left'));
+  $(window).scroll(function(){
+    $("body").css({
+      'left': $(this).scrollLeft() + leftOffset
+    });
+  })
+
+
+
   var $commentCon = $("#new_comment").parent().clone();
   var $commentForm = $commentCon.find("#new_comment");
   var baseAction = $commentForm.attr("action");
