@@ -29,7 +29,6 @@
             <% @comments.each do |comment| %>
               <%= render partial: "shared/comment_show", locals: {comment: comment} %>
             <% end %>
-         
           </div>
           <%= render partial: "shared/comment_form", locals: {parent: @post, comment: @post.comments.new, button_label: "Add reply"} %>
         </div>
