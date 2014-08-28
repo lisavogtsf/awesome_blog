@@ -37,28 +37,11 @@ class PostsController < ApplicationController
 			post.tags << tag
 		end
 
-		render json: {post: post}
-
-		# redirect_to [@user, post]
-	end
-
-	def results
-		# does not currently hadle duplicate tags in the same new post
-		post_attr = params.require(:post).permit(:title, :content)
-		post = find_user_by_id.posts.create(post_attr)
-		tag_data = params[:tags].split(/\,\s*|\s*\#|\s+/)
-
-		tag_data.each do |tag_str|
-			tag = Tag.find_by_name(tag_str)
-			if tag == nil
-				tag = Tag.create(name: tag_str)
-			end
-			post.tags << tag
+		respond_to do |f|
+			f.json {render :json => {post: post}}
+			f.html
 		end
 
-
-
-		render json: {status: "ok"}
 	end
 
 	def show
