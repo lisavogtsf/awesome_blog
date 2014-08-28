@@ -32,9 +32,8 @@
     margin-top: 1em;
 }
 
-.fade-first:first-of-type {
+.fade-first:first-child{
   opacity: 1;
-  /*transition: all .5s ease;*/
   -webkit-animation: fade-in 1s 1 ease;
   -moz-animation: fade-in 1s 1 ease;
   -ms-animation: fade-in 1s 1 ease;
