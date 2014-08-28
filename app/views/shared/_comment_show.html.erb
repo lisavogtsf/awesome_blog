@@ -16,7 +16,7 @@
       <div>
         <%#button_to "Delete", nil, method: :delete, :class => "inline red ui button delete"%>
       </div>
-    </div><br><br>
+    </div><br>
     <div class="ui comments">
       <% comment.comments.each do |sub_comment| %>
         <%= render partial: "shared/comment_show", locals: {comment: sub_comment} %>
