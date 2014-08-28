@@ -10,7 +10,7 @@ $(document).ready(function(){
 	$.when(getPosts(userId)).done(function(result){
 		console.log(result)
 		var compiledTemplate = HandlebarsTemplates['post/new']({result: result});
-		$('.grid.right').append(compiledTemplate);
+		$('#results').append(compiledTemplate);
 	})
 
 	function createPosts(id, data) {
@@ -34,10 +34,13 @@ $(document).ready(function(){
 		};
 		$.when(createPosts(userId, post)).done(function(post){
 			console.log("post returned: ", post)
+			$('#post_title').val('');
+			$('#post_content').val('');
+			$('#tags').val('');
 			$.when(getPosts(userId)).done(function(result){
 				console.log(result)
 				var compiledTemplate = HandlebarsTemplates['post/new']({result: result});
-				$('.grid.right').append(compiledTemplate);
+				$('#results').html(compiledTemplate);
 			})
 		})
 	})
