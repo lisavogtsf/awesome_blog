@@ -16,6 +16,7 @@
       <div class="field space-above">
         <%# button_to "Delete", delete_comment_path, params: {comment: comment}, class: "inline ui red button delete"%>
       </div>
+        <%# button_to "Delete", method: :delete, class: "ui button delete" %>
     </div>
     <div class="comments">
       <% comment.comments.each do |sub_comment| %>

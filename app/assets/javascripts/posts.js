@@ -8,7 +8,6 @@ $(document).ready(function(){
 	}
 
 	$.when(getPosts(userId)).done(function(result){
-		console.log(result)
 		var compiledTemplate = HandlebarsTemplates['post/new']({result: result});
 		$('#results').append(compiledTemplate);
 	})
@@ -24,7 +23,6 @@ $(document).ready(function(){
 	//show new Post
 	$("#new_post").on("submit", function(e){
 		e.preventDefault();
-		console.log("form submitted")
 		var post = {
 			post: {
 				title: $("#post_title").val(),
@@ -33,15 +31,13 @@ $(document).ready(function(){
 			tags: $("#tags").val()
 		};
 		$.when(createPosts(userId, post)).done(function(post){
-			console.log("post returned: ", post)
 			$('#post_title').val('');
 			$('#post_content').val('');
 			$('#tags').val('');
-			$.when(getPosts(userId)).done(function(result){
-				console.log(result)
-				var compiledTemplate = HandlebarsTemplates['post/new']({result: result});
-				$('#results').html(compiledTemplate);
-			})
+
+			var compiledTemplate = HandlebarsTemplates['post/new']({result: post});
+			$('#results').prepend(compiledTemplate);
+
 		})
 	})
 }); // end document ready

@@ -14,7 +14,8 @@
 
  html, body {
   font-family: 'Open Sans', sans-serif;
-  background-image: url('http://semantic-ui.com/images/bg.jpg');
+  background-image: url("http://s18.postimg.org/g12zsjnc9/giftly.png");
+  /*background-image: url("http://www.artmoth.com/images/content/backgrounds/3-1283209507-bg-pastel-hello-kitty.gif");*/
 }
 
 a {

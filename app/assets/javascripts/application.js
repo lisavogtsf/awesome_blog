@@ -17,7 +17,7 @@
 //= require_tree .
 
 $(document).on("ready page:load", function(){
-  var $commentCon = $("#new_comment").clone();
+  var $commentCon = $("#new_comment").parent.clone();
   var $commentForm = $commentCon.find("#new_comment");
   var baseAction = $commentForm.attr("action");
   var $last;
