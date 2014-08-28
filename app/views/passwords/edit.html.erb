@@ -10,10 +10,10 @@
 			<div class="ui form">
 				<%=form_tag password_path(@code), method: "put" do %>
 				<div class="field">
-					<%=password_field :password, placeholder:"Password" %>
+					<%=password_field :password, nil, placeholder:"Password" %>
 				</div>
 				<div class="field">
-					<%=password_field :password_confirmation, placeholder: "Password Conformation" %>
+					<%=password_field :password_confirmation, nil, placeholder: "Password Conformation" %>
 				</div>
 					<%=submit_tag "submit change", class: "ui green button" %>
 
