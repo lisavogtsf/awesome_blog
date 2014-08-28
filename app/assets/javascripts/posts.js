@@ -21,8 +21,6 @@ $(document).ready(function(){
 		});
 	}
 
-	// console.log(getPosts(3))
-
 	//show new Post
 	$("#new_post").on("submit", function(e){
 		e.preventDefault();
