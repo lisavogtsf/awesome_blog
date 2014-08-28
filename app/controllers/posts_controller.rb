@@ -41,7 +41,6 @@ class PostsController < ApplicationController
 			f.json {render :json => {post: post}}
 			f.html
 		end
-
 	end
 
 	def show
