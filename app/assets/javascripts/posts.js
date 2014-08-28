@@ -29,17 +29,22 @@ $(document).ready(function(){
 			post: {
 				title: $("#post_title").val(),
 				content: $("#post_content").val()
-
 			},
 			tags: $("#tags").val()
-
-		}
-		$.when(createPosts(userId, post), function(post){
-				$.when(getPosts(userId)).done(function(result){
-					console.log(result)
-					var compiledTemplate = HandlebarsTemplates['post/new']({result: result});
-					$('.grid.right').append(compiledTemplate);
-				})
+		};
+		$.when(createPosts(userId, post)).done(function(post){
+			console.log("post returned: ", post)
+			$.when(getPosts(userId)).done(function(result){
+				console.log(result)
+				var compiledTemplate = HandlebarsTemplates['post/new']({result: result});
+				$('.grid.right').append(compiledTemplate);
 			})
+		})
 	})
-})
+}); // end document ready
+
+
+
+
+
+
