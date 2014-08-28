@@ -7,10 +7,8 @@ class CommentsController < ApplicationController
 before_action :is_authenticated?	
 
   def create
-    comment_attr = get_comment_attr
-    @parent.comments.create(comment_attr)
-    @user = User.find_by_id(params[:user][:id])
-    redirect_to_post
+    @parent.comments.create(get_comment_attr)
+    redirect_to_post 
   end
 
   def destroy
@@ -43,7 +41,6 @@ before_action :is_authenticated?
     end
 
     def redirect_to_post
-
-        redirect_to post_path @post.id
+      redirect_to user_post_path @post.user_id, @post.id
     end
 end
