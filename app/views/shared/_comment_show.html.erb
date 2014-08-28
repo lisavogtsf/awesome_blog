@@ -12,9 +12,9 @@
       <%= comment.body %>
     </div>
     <div class="actions">
-      <button href="" class="inline ui button comment_now reply" data-comment-id="<%= comment.id %>">Reply</button>
-      <div>
-        <%=button_to "Delete", method: :delete, :class => "inline ui button delete"%>
+      <button class="inline ui button comment_now blue reply" data-comment-id="<%= comment.id %>">Reply</button>
+      <div class="field space-above">
+        <%# button_to "Delete", delete_comment_path, params: {comment: comment}, class: "inline ui red button delete"%>
       </div>
     </div>
     <div class="comments">
