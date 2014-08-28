@@ -14,20 +14,3 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
-// $(document).on("ready page:load", function(){
-//   var $commentCon = $("#new_comment").parent().clone();
-//   var $commentForm = $commentCon.find("#new_comment");
-//   var baseAction = $commentForm.attr("action");
-//   var $last;
-//   $(".reply").on("click",".comment", function(event){
-//       $last = $last || $(this);
-//       $last.show();
-//       var commentId = this.dataset.commentId;
-//       var actionPath = baseAction + "/" + commentId;
-//       $commentForm.attr("action", actionPath);
-//       $(this).hide();
-//       $last = $(this);
-//       $last.parent().append($commentCon);
-//   });
-// });

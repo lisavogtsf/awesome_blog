@@ -17,7 +17,6 @@
       <% if @editable %>
         <p><%= link_to "Update This?", edit_user_post_path, class: "ui blue button" %></p>
       <% end %>
-
     </div>
   </div>
   <div class="one column row">
@@ -28,9 +27,9 @@
           </h2>
           <div class="ui comments">
             <% @comments.each do |comment| %>
-              <%= render partial: "shared/comment_show", locals: {user: @user, comment: comment} %>
+              <%= render partial: "shared/comment_show", locals: {comment: comment} %>
             <% end %>
-              <%= render partial: "shared/comment_form", locals: {user: @user, parent: @post, comment: @post.comments.new, button_label: "Add reply"} %>
+            <%= render partial: "shared/comment_form", locals: {parent: @post, comment: @post.comments.new, button_label: "Add reply"} %>
           </div>
         </div>
       </div>
