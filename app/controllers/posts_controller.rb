@@ -37,10 +37,8 @@ class PostsController < ApplicationController
 			post.tags << tag
 		end
 
-		respond_to do |format|
-			format.html { redirect_to '/users/#{@user.id}/posts/new' }
-			format.json { render json: @user.posts }
-		end
+		render json: {status: "ok"}
+
 		# redirect_to [@user, post]
 	end
 
