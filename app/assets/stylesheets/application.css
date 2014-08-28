@@ -17,6 +17,11 @@
   background-image: url('../images/giftly.png');
 }
 
+a {
+  text-decoration: none;
+  color: #5AC3F5;
+}
+
 .ui.leftbar {
   position: fixed;
   width: 75px;
@@ -45,4 +50,8 @@
   right: 0;
   height: 3em;
   background-color: red;
+}
+
+.inline {
+  float: left;
 }

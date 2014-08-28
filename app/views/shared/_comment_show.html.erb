@@ -12,9 +12,10 @@
       <%= comment.body %>
     </div>
     <div class="actions">
-      <a href="" class="comment reply" data-comment-id="<%= comment.id %>">Reply</a>
-      <%# render partial: "shared/comment_form", locals: {parent: comment, comment: comment.comments.new, button_label: "Add reply"} %>
-      <%=link_to "Delete", method: :delete, class:"delete"%>
+      <button href="" class="inline ui button comment_now reply" data-comment-id="<%= comment.id %>">Reply</button>
+      <div>
+        <%=button_to "Delete", method: :delete, :class => "inline ui button delete"%>
+      </div>
     </div>
     <div class="comments">
       <% comment.comments.each do |sub_comment| %>

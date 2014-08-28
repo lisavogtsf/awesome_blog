@@ -12,8 +12,8 @@
 	  <div class="row">
 	    <div class="thirteen wide column">
 		    <div class="ui blue segment stacked">
-		    	<img class="ui circular small image" src="<%= user.img_url %>"><a href="../users/<%=user.id %>">
-		      <p class="text center"><%= user.first_name %> <%=user.last_name %></p></a>
+		    	<img class="ui circular small image" src="<%= user.img_url %>">
+		      <a href="../users/<%=user.id %>"><h2 class="text center"><%= user.first_name %> <%=user.last_name %></h2></a>
 		    	<% user.posts.order('updated_at DESC').limit('2').each do |post| %>
 		    	<div class="row">
 		    		<h4 class="ui header"><%= post.title %></h4>
