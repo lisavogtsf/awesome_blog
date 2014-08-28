@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-	before_action :is_authenticated?
+	before_action :is_authenticated?, except: [:new, :create]
 
 	def index
 		@users = User.all
@@ -11,12 +11,13 @@ class UsersController < ApplicationController
 	# display new user form
 	def new
 		@user = User.new
-		@current_user = current_user
 	end
 
 	# create new user
 	def create
-		user_params = params.require(:user).permit(:first_name, :last_name, :email, :password)
+		puts "*"*50
+		puts "Running!!!"
+		user_params = params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
     newbie = User.create(user_params)
 
     redirect_to newbie
