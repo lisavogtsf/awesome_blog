@@ -11,12 +11,8 @@ AwesomeBlog::Application.routes.draw do
     resources :pages
   end
 
-  resources :posts do
-    resources :comments, only: [:create]
-  end
-
   post "posts/:post_id/comments", to: "comments#create", :as => "post_comments"
-  post "posts/:post_id/comments/:id", to: "comments#create", :as => "post_comment"
+  # post "posts/:post_id/comments/:id", to: "comments#create", :as => "post_comment"
   # post "comments/:id/comment", to: "comments#create", :as => "comment_comments"
 
   get '/login' => "sessions#new"
