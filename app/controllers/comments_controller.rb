@@ -9,6 +9,7 @@ before_action :is_authenticated?
   def create
     comment_attr = get_comment_attr
     @parent.comments.create(comment_attr)
+    @user = User.find_by_id(params[:user][:id])
     redirect_to_post
   end
 
@@ -42,6 +43,7 @@ before_action :is_authenticated?
     end
 
     def redirect_to_post
+
         redirect_to post_path @post.id
-      end
+    end
 end
