@@ -1,25 +1,26 @@
 
-<%= form_for ([parent, comment]), html: {class: "ui reply form" } do |f| %>
+<%= form_for ([parent, comment]), html: {class: "ui reply form"} do |f| %>
 <%# f.hidden_field user: user %>
-
-  <div class="field">
-    <div class="ui left labeled input">
-    	<%= f.text_field :title, placeholder: "Comment title" %>
-      <div class="ui corner label">
-        <i class="icon asterisk"></i>
-      </div>
+<!-- <div class="ui reply form"> -->
+<div class="field">
+  <div class="ui left labeled input">
+  	<%= f.text_field :title, placeholder: "Comment title" %>
+    <div class="ui corner label">
+      <i class="icon asterisk"></i>
     </div>
   </div>
+</div>
 
-  <div class="field">
-    <div class="ui left labeled input">
-    	<%= f.text_area :body, placeholder: "Comment body..." %>
-      <div class="ui corner label">
-        <i class="icon asterisk"></i>
-      </div>
+<div class="field">
+  <div class="ui left labeled input">
+  	<%= f.text_area :body, placeholder: "Comment body..." %>
+    <div class="ui corner label">
+      <i class="icon asterisk"></i>
     </div>
   </div>
-      <%= f.submit button_label, class: "ui fluid blue labeled submit icon button icon edit" %>
+</div>
+  <%= f.submit button_label, class: "ui blue labeled submit button edit" %>
 <% end %>
+<!-- </div> -->
 
 
