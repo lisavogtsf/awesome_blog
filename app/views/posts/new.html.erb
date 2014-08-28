@@ -12,7 +12,7 @@
     <div class="left floated twelve wide column">
       <!-- when using post form, drop it into a div class="post-form" -->
       <!--to pick up appropriate styles -->
-      <div class="post-form">
+      <div class="post-form" data-id=<%=@user.id %>   >
       <%= render partial: "shared/post_form", object: @post, locals: {user: @user, button_label: "Create post"} %>
       </div>
     </div><!-- /.column -->
