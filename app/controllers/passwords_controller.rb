@@ -21,8 +21,7 @@ class PasswordsController < ApplicationController
   def update
     user = User.find_by_code(params[:id])
     #binding.pry
-    newpassword = params.permit(:password, :password_confirmation)
-    user.update_attributes({:password => newpassword[:password], :password_confirmation => newpassword[:password_confirmation]})
+    user.update_attributes(password: params[:password][0], password_confirmation: params[:password_confirmation][0])
     redirect_to login_url, notice: "Password changed, please Login"
   end
 end
