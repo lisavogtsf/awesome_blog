@@ -37,9 +37,10 @@ class PostsController < ApplicationController
 			post.tags << tag
 		end
 
-		render json: {post: post}
-
-		# redirect_to [@user, post]
+		respond_to do |f|
+			f.json {render :json => {post: post}}
+			f.html
+		end
 	end
 
 	def show
