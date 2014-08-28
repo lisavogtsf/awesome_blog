@@ -8,10 +8,10 @@ class PostsController < ApplicationController
 		@user = User.find_by_id(user_id)
 
 		@posts = @user.posts.order('posts.created_at DESC')
-		
-		respond_to do |format|
-			format.html
-			format.json {render json: @posts}
+
+		respond_to do |f|
+			f.html
+			f.json {render json: @posts}
 		end
 	end
 
@@ -20,8 +20,6 @@ class PostsController < ApplicationController
 		@user = User.find_by_id(user_id)
 
 		@post = @user.posts.new
-
-
 	end
 
 	def create
@@ -38,10 +36,12 @@ class PostsController < ApplicationController
 			end
 			post.tags << tag
 		end
-		
+
 		respond_to do |format|
-			format.html {redirect_to @user}
+			format.html { redirect_to '/users/#{@user.id}/posts/new' }
+			format.json { render json: @user.posts }
 		end
+		# redirect_to [@user, post]
 	end
 
 	def show
@@ -56,7 +56,7 @@ class PostsController < ApplicationController
 		post_id = params[:id]
 		@post = @user.posts.find_by_id(post_id)
 		@comments = @post.comments
-		
+
 	end
 
 	def edit
@@ -66,7 +66,7 @@ class PostsController < ApplicationController
 		post_id = params[:id]
 		@post = @user.posts.find_by_id(post_id)
 
-		
+
 	end
 
 	def update
