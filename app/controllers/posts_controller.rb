@@ -42,25 +42,6 @@ class PostsController < ApplicationController
 		# redirect_to [@user, post]
 	end
 
-	def results
-		# does not currently hadle duplicate tags in the same new post
-		post_attr = params.require(:post).permit(:title, :content)
-		post = find_user_by_id.posts.create(post_attr)
-		tag_data = params[:tags].split(/\,\s*|\s*\#|\s+/)
-
-		tag_data.each do |tag_str|
-			tag = Tag.find_by_name(tag_str)
-			if tag == nil
-				tag = Tag.create(name: tag_str)
-			end
-			post.tags << tag
-		end
-
-
-
-		render json: {status: "ok"}
-	end
-
 	def show
 		@post = Post.find_by_id(params[:id])
 		user_id = @post.user_id
