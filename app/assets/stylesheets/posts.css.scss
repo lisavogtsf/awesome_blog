@@ -30,4 +30,35 @@
 }
 .space-above {
     margin-top: 1em;
-  }
+}
+
+.fade-first:first-of-type {
+  opacity: 1;
+  /*transition: all .5s ease;*/
+  -webkit-animation: fade-in 1s 1 ease;
+  -moz-animation: fade-in 1s 1 ease;
+  -ms-animation: fade-in 1s 1 ease;
+  animation: fade-in 1s 1 ease;
+}
+
+@-webkit-keyframes fade-in {
+  0%: {opacity: 0;}
+  100%: {opacity: 1}
+}
+
+@-moz-keyframes fade-in {
+  0%: {opacity: 0;}
+  100%: {opacity: 1}
+}
+@-ms-keyframes fade-in {
+  0%: {opacity: 0;}
+  100%: {opacity: 1}
+}
+@keyframes fade-in {
+  0%: {opacity: 0;}
+  100%: {opacity: 1}
+}
+
+
+
+
